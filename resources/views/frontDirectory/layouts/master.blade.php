@@ -26,6 +26,9 @@
     <!-- Template Stylesheet -->
     <link href="{{ asset('frontView/css/style.css')}}" rel="stylesheet">
 </head>
+<script>
+    var baseUrl = "{{ url('/') }}";
+</script>
 
 <body>
 <!-- Topbar Start -->
@@ -71,10 +74,12 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-light mb-2" href="index.php"><i class="fa fa-angle-right me-2"></i>Home</a>
-                    <a class="text-light mb-2" href="about.php"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                    <a class="text-light mb-2" href="registration.php"><i class="fa fa-angle-right me-2"></i>Registration</a>
-                    <a class="text-light" href="contact.php"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                    <a class="text-light mb-2" href="{{ url('/') }}"><i class="fa fa-angle-right me-2"></i>Home</a>
+                    <a class="text-light mb-2" href="{{ url('/about') }}"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                    <a class="text-light mb-2" href="{{ url('/Breastbdcon2024') }}"><i class="fa fa-angle-right me-2"></i>BREASTBDCON 2025</a>
+
+                    <a class="text-light mb-2" href="{{ url('/registration') }}"><i class="fa fa-angle-right me-2"></i>Registration</a>
+                    <a class="text-light" href="{{ url('/contact') }}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -134,7 +139,8 @@
 <script src="{{ asset('frontView/lib/tempusdominus/js/tempusdominus-bootstrap-4.js')}}"></script>
 
 <!-- Template Javascript -->
-<!--<script src="{{ asset('frontView/js/main.js')}}"></script>-->
+<script src="{{ asset('frontView/js/main.js')}}"></script>
+<script src="{{ asset('frontView/custom/js/home.js?'.rand(10,100))}}"></script>
 
 </body>
 

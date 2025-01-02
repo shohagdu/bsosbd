@@ -8,6 +8,7 @@
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
+
                 </div>
 
                 <!-- Navigation Links -->
@@ -15,6 +16,10 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('workshopApplicant')" :active="request()->routeIs('workshopApplicant')">
+                        {{ __('Applicant') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

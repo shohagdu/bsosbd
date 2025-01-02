@@ -98,13 +98,13 @@
 
 .hero-header {
     background: url(../img/bsos_banner.jpg) top right no-repeat;
-    background-size: cover;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+    /*background-size: cover;*/
+    /*height: 100vh; !* Full viewport height *!*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*color: white;*/
+    /*text-align: center;*/
     /*height: 80%;*/
 }
 
