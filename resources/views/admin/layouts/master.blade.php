@@ -15,25 +15,24 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</x-app-layout>--}}
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="BSOS BD">
-    <meta name="author" content="BSOS BD">
-    <meta name="keywords" content="BSOS BD">
+    <meta name="description" content="BSOSBD">
+    <meta name="author" content="BSOSBD">
+    <meta name="keywords" content="BSOSBD">
 
     {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
-    <link rel="shortcut icon" href="{{ asset('adminView/img/icons/icon-48x48.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('public/adminView/img/icons/icon-48x48.png')}}" />
 
     {{--    <link rel="canonical" href="https://demo-basic.adminkit.io/" />--}}
 
     <title>BSOS BD</title>
-    <link href="{{ asset('adminView/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/adminView/css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 

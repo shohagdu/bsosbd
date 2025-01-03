@@ -17,14 +17,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('frontView/lib/owlcarousel/assets/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontView/lib/tempusdominus/css/tempusdominus-bootstrap-4.css')}}" rel="stylesheet" />
+    <link href="{{ asset('public/frontView/lib/owlcarousel/assets/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/frontView/lib/tempusdominus/css/tempusdominus-bootstrap-4.css')}}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('frontView/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('public/frontView/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{ asset('frontView/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('public/frontView/css/style.css')}}" rel="stylesheet">
 </head>
 <script>
     var baseUrl = "{{ url('/') }}";
@@ -113,7 +113,7 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-md-6 text-center text-md-start">
-                <p class="mb-md-0">&copy; <a class="text-primary" href="#">shohozit</a>. All Rights Reserved.</p>
+                <p class="mb-md-0">&copy; <a class="text-primary" href="https://shohozit.com">shohozit</a>. All Rights Reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <p class="mb-0">Designed by <a class="text-primary"  target="_blank" href="https://shohozit.com">shohozit.com</a></p>
@@ -131,16 +131,16 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('frontView/lib/easing/easing.js')}}"></script>
-<script src="{{ asset('frontView/lib/waypoints/waypoints.min.js')}}"></script>
-<script src="{{ asset('frontView/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-<script src="{{ asset('frontView/lib/tempusdominus/js/moment.min.js')}}"></script>
-<script src="{{ asset('frontView/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
-<script src="{{ asset('frontView/lib/tempusdominus/js/tempusdominus-bootstrap-4.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/easing/easing.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/waypoints/waypoints.min.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/tempusdominus/js/moment.min.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+<script src="{{ asset('public/frontView/lib/tempusdominus/js/tempusdominus-bootstrap-4.js')}}"></script>
 
 <!-- Template Javascript -->
-<script src="{{ asset('frontView/js/main.js')}}"></script>
-<script src="{{ asset('frontView/custom/js/home.js?'.rand(10,100))}}"></script>
+<script src="{{ asset('public/frontView/js/main.js')}}"></script>
+<script src="{{ asset('public/frontView/custom/js/home.js?'.rand(10,100))}}"></script>
 
 </body>
 

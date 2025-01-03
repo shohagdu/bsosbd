@@ -11,10 +11,14 @@
                 @if(!empty($UK))
                     <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">UK</h1>
                     @foreach($UK as $ukFaculty)
-                        <div class="team-item col-lg-6" style="margin-top: 10px;">
+                        <div class=" col-lg-6" style="margin-top: 10px;">
                             <div class="row g-0 bg-light rounded overflow-hidden">
                                 <div class="col-12 col-sm-5 h-100">
-                                    <img class="img-fluid h-100" src="{{ asset('frontView/img/default.jpeg')}}" style="object-fit: cover;">
+                                    @if(!empty($ukFaculty->image) && Storage::disk('public')->exists($ukFaculty->image))
+                                        <img src="{{ asset('storage/app/public/' . $ukFaculty->image) }}" style="width: 100%;height: 200px;">
+                                    @else
+                                        <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="width: 100%;height:200px;">
+                                    @endif
                                 </div>
                                 <div class="col-12 col-sm-7 h-100 d-flex flex-column">
                                     <div class="mt-auto p-4">
@@ -23,9 +27,7 @@
                                         <p class="m-0">{{ $ukFaculty->degree_info??NULL }}</p>
                                         <p class="m-0">{{ $ukFaculty->institute??NULL }}</p>
                                     </div>
-                                    <div class="d-flex mt-auto border-top p-4">
-                                        {{--                                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"></a>--}}
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -35,10 +37,14 @@
                 @if(!empty($Turkey))
                     <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">Turkey</h1>
                     @foreach($Turkey as $facultyTurkey)
-                        <div class="team-item col-lg-6" style="margin-top: 10px;">
+                        <div class=" col-lg-6" style="margin-top: 10px;">
                             <div class="row g-0 bg-light rounded overflow-hidden">
                                 <div class="col-12 col-sm-5 h-100">
-                                    <img class="img-fluid h-100" src="{{ asset('frontView/img/default.jpeg')}}" style="object-fit: cover;">
+                                    @if(!empty($facultyTurkey->image) && Storage::disk('public')->exists($facultyTurkey->image))
+                                        <img src="{{ asset('storage/app/public/' . $facultyTurkey->image) }}" style="width: 100%;height: 200px;">
+                                    @else
+                                        <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="width: 100%;height:200px;">
+                                    @endif
                                 </div>
                                 <div class="col-12 col-sm-7 h-100 d-flex flex-column">
                                     <div class="mt-auto p-4">
@@ -47,9 +53,7 @@
                                         <p class="m-0">{{ $facultyTurkey->degree_info??NULL }}</p>
                                         <p class="m-0">{{ $facultyTurkey->institute??NULL }}</p>
                                     </div>
-                                    <div class="d-flex mt-auto border-top p-4">
-                                        {{--                                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"></a>--}}
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -59,10 +63,14 @@
                 @if(!empty($Australia))
                     <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">Australia</h1>
                     @foreach($Australia as $facultyAustralia)
-                        <div class="team-item col-lg-6" style="margin-top: 10px;">
+                        <div class=" col-lg-6" style="margin-top: 10px;">
                             <div class="row g-0 bg-light rounded overflow-hidden">
                                 <div class="col-12 col-sm-5 h-100">
-                                    <img class="img-fluid h-100" src="{{ asset('frontView/img/default.jpeg')}}" style="object-fit: cover;">
+                                    @if(!empty($facultyAustralia->image) && Storage::disk('public')->exists($facultyAustralia->image))
+                                        <img src="{{ asset('storage/app/public/' . $facultyAustralia->image) }}" style="width: 100%;height: 200px;">
+                                    @else
+                                        <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="width: 100%;height:200px;">
+                                    @endif
                                 </div>
                                 <div class="col-12 col-sm-7 h-100 d-flex flex-column">
                                     <div class="mt-auto p-4">
@@ -70,9 +78,6 @@
                                         <h6 class="fw-normal fst-italic text-primary mb-4">{{ $facultyAustralia->designation??NULL }}</h6>
                                         <p class="m-0">{{ $facultyAustralia->degree_info??NULL }}</p>
                                         <p class="m-0">{{ $facultyAustralia->institute??NULL }}</p>
-                                    </div>
-                                    <div class="d-flex mt-auto border-top p-4">
-                                        {{--                                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"></a>--}}
                                     </div>
                                 </div>
                             </div>
@@ -83,10 +88,15 @@
                 @if(!empty($India))
                     <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">India</h1>
                     @foreach($India as $facultyIndia)
-                        <div class="team-item col-lg-6" style="margin-top: 10px;">
+                        <div class=" col-lg-6" style="margin-top: 10px;">
                             <div class="row g-0 bg-light rounded overflow-hidden">
                                 <div class="col-12 col-sm-5 h-100">
-                                    <img class="img-fluid h-100" src="{{ asset('frontView/img/default.jpeg')}}" style="object-fit: cover;">
+
+                                    @if(!empty($facultyAustralia->image) && Storage::disk('public')->exists($facultyAustralia->image))
+                                        <img src="{{ asset('storage/app/public/' . $facultyAustralia->image) }}" style="width: 100%;height: 200px;">
+                                    @else
+                                        <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="width: 100%;height:200px;">
+                                    @endif
                                 </div>
                                 <div class="col-12 col-sm-7 h-100 d-flex flex-column">
                                     <div class="mt-auto p-4">
@@ -94,9 +104,6 @@
                                         <h6 class="fw-normal fst-italic text-primary mb-4">{{ $facultyIndia->designation??NULL }}</h6>
                                         <p class="m-0">{{ $facultyIndia->degree_info??NULL }}</p>
                                         <p class="m-0">{{ $facultyIndia->institute??NULL }}</p>
-                                    </div>
-                                    <div class="d-flex mt-auto border-top p-4">
-                                        {{--                                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"></a>--}}
                                     </div>
                                 </div>
                             </div>

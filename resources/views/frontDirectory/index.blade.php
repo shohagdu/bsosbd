@@ -5,7 +5,7 @@
     <!-- Hero Start -->
     <div class="container-fluid">
         <div class="row">
-            <img src="{{ asset('frontView/img/bsos_banner.jpg') }}" class=" w-100 h-100 ">
+            <img src="{{ asset('public/frontView/img/bsos_banner.jpg') }}" >
         </div>
 {{--        <div class="container py-5">--}}
 {{--            <div class="row justify-content-start">--}}

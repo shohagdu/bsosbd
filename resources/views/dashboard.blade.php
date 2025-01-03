@@ -61,26 +61,64 @@
                 <div class="card-header">
                     <h5 class="card-title mb-0">Latest Applicant</h5>
                 </div>
+
                 <table class="table table-hover my-0">
                     <thead>
                     <tr>
+                        <th>S/N</th>
+                        <th>ID</th>
+                        <th>Title</th>
                         <th>Name</th>
-                        <th class="d-none d-xl-table-cell">Institute</th>
-                        <th class="d-none d-xl-table-cell">Degree</th>
+                        <th>Institute</th>
+                        <th>Degree</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
                         <th>Amount</th>
-                        <th class="d-none d-md-table-cell">Payment Status</th>
+                        <td></td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Project Apollo</td>
-                        <td class="d-none d-xl-table-cell">01/01/2021</td>
-                        <td class="d-none d-xl-table-cell">31/06/2021</td>
-                        <td><span class="badge bg-success">Done</span></td>
-                        <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                    </tr>
+                    @php($i=1)
+                    @if(!empty($allApplicant))
+                        @foreach($allApplicant as $applicant)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $applicant->member_id??NULL }}</td>
+                                <td>{{ $applicant->title??NULL }}</td>
+                                <td>{{ $applicant->name??NULL }}</td>
+                                <td>{{ $applicant->institute??NULL }}</td>
+                                <td>{{ $applicant->degree??NULL }}</td>
+                                <td>{{ $applicant->mobile??NULL }}</td>
+                                <td>{{ $applicant->email??NULL }}</td>
+                                <td>{{ $applicant->amount??NULL }}</td>
+                                <td><a href="{{ url('/viewApplicant/'.encrypt($applicant->id)) }}" class="btn btn-primary btn-sm">View</a>
+
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
+
+{{--                <table class="table table-hover my-0">--}}
+{{--                    <thead>--}}
+{{--                    <tr>--}}
+{{--                        <th>Name</th>--}}
+{{--                        <th class="d-none d-xl-table-cell">Institute</th>--}}
+{{--                        <th class="d-none d-xl-table-cell">Degree</th>--}}
+{{--                        <th>Amount</th>--}}
+{{--                        <th class="d-none d-md-table-cell">Payment Status</th>--}}
+{{--                    </tr>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
+{{--                    <tr>--}}
+{{--                        <td>Project Apollo</td>--}}
+{{--                        <td class="d-none d-xl-table-cell">01/01/2021</td>--}}
+{{--                        <td class="d-none d-xl-table-cell">31/06/2021</td>--}}
+{{--                        <td><span class="badge bg-success">Done</span></td>--}}
+{{--                        <td class="d-none d-md-table-cell">Vanessa Tucker</td>--}}
+{{--                    </tr>--}}
+{{--                    </tbody>--}}
+{{--                </table>--}}
             </div>
         </div>
 

@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th style="width: 5%;">S/N</th>
+                        <th>Image</th>
                         <th>Country</th>
                         <th>Name</th>
                         <th>Designation</th>
@@ -42,13 +43,21 @@
                         @foreach($facultyMember as $faculty)
                             <tr>
                                 <td>{{ $i++ }}</td>
+                                <td>
+                                     @if(!empty($faculty->image) && Storage::disk('public')->exists($faculty->image))
+                                         <img src="{{ asset('storage/app/public/' . $faculty->image) }}" style="max-width: 80px;">
+                                     @else
+                                         <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="max-width: 80px;">
+                                     @endif
+                                </td>
                                 <td>{{ $faculty->country??null }}</td>
                                 <td>{{ $faculty->name??null }}</td>
                                 <td>{{ $faculty->designation??null }}</td>
                                 <td>{{ $faculty->institute??null }}</td>
                                 <td>{{ $faculty->degree_info??null }}</td>
+                                <td>{{ $faculty->is_active?($faculty->is_active==1?'Active':'Inactive'):'' }}</td>
                                 <td><a href="{{ url('/updateFacultyMember/'.encrypt($faculty->id)) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="{{ url('/deleteFacultyMember/'.encrypt($faculty->id)) }}" class="btn btn-danger btn-sm">Delete</a> </td>
+{{--                                    <a href="{{ url('/deleteFacultyMember/'.encrypt($faculty->id)) }}" class="btn btn-danger btn-sm">Delete</a> </td>--}}
                             </tr>
                         @endforeach
                     @endif

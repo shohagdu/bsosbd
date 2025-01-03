@@ -13,10 +13,30 @@ use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
     public function dashboard(){
-        $totalApplicant = WorkshopRegistration::where(['is_active'=>1])->count();
-        $totalFacultyMember  = Faculty_member::where(['is_active'=>1])->count();
-        return view('dashboard',compact('totalApplicant','totalFacultyMember'));
+        $totalApplicant         = WorkshopRegistration::where(['is_active'=>1])->count();
+        $totalFacultyMember     = Faculty_member::where(['is_active'=>1])->count();
+        $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->orderBy('id','DESC')->limit(10)->get();
+        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant'));
     }
+
+    public function workshopApplicant(){
+        $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->get();
+        return view('admin.applicant',compact('allApplicant'));
+    }
+
+    public function facultyMember(){
+        $facultyMember= Faculty_member::whereIn('is_active',[1,2])->get();
+        return view('admin.facultyMember',compact('facultyMember'));
+    }
+
+
+    public function addNewFacultyMember(){
+        $facultyMemberInfo =   [];
+        $country = ['UK','Turkey','Australia','India'];
+
+        return view('admin.facultyMember.update',compact('facultyMemberInfo','country'));
+    }
+
     public function updateFacultyMember($id){
         $id=decrypt($id)??'';
         if(!empty($id)){
@@ -24,7 +44,6 @@ class AdminController extends Controller
         }else{
             $facultyMemberInfo =   [];
         }
-//        dd($facultyMemberInfo);
         $country = ['UK','Turkey','Australia','India'];
         return view('admin.facultyMember.update',compact('facultyMemberInfo','country'));
     }
@@ -32,18 +51,55 @@ class AdminController extends Controller
     public function updatedStoreFacultyMember(Request $request)
     {
 
-        $data=[
-            'country'         =>  $request->country??NULL,
-            'name'     =>  $request->name??NULL,
-            'degree_info'          =>  $request->degree??NULL,
-            'institute'     =>  $request->institute??NULL,
-            'designation'        =>  $request->designation??NULL,
-            'is_active'        =>  $request->is_active??NULL,
-            'updated_time'    =>date('Y-m-d H:i:s'),
-            'updated_ip'    =>'NULL',
-        ];
-        DB::table('faculty_members')->where('id',$request->facultyMemberId)->update($data);
-        return redirect('/facultyMember')->with('success', 'Your Registration Complete Successfully');
+        $validatedData = $request->validate([
+            'country'       => 'required| string',
+            'name'          => 'required|string',
+            'institute'     => 'required|string',
+            'designation'   => 'required|string',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate the image
+        ]);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store('faculty_images', 'public');
+        }elseif(!empty($request->hiddenImage)){
+            $imagePath= $request->hiddenImage;
+        }
+
+        if(empty($request->facultyMemberId)){
+
+            $data = [
+                'image'         => $imagePath,
+                'country'       => $request->country ?? NULL,
+                'name'          => $request->name ?? NULL,
+                'degree_info'   => $request->degree ?? NULL,
+                'institute'     => $request->institute ?? NULL,
+                'designation'   => $request->designation ?? NULL,
+                'is_active'     => $request->is_active ?? NULL,
+                'created_time' => date('Y-m-d H:i:s'),
+                'created_ip'    =>  $request->ip()??NULL,
+            ];
+          //  dd($data);
+            DB::table('faculty_members')->insert($data);
+            return redirect('/facultyMember')->with('success', 'Successfully Save Faculty Member information ');
+
+        }else {
+            $data = [
+                'image'         => $imagePath,
+                'country'       => $request->country ?? NULL,
+                'name'          => $request->name ?? NULL,
+                'degree_info'   => $request->degree ?? NULL,
+                'institute'     => $request->institute ?? NULL,
+                'designation'   => $request->designation ?? NULL,
+                'is_active'     => $request->is_active ?? NULL,
+                'updated_time'  => date('Y-m-d H:i:s'),
+                'updated_ip'    => $request->ip()??NULL,
+            ];
+
+            DB::table('faculty_members')->where('id', $request->facultyMemberId)->update($data);
+            return redirect('/facultyMember')->with('success', 'Successfully Update faculty Member Information');
+        }
 
     }
 

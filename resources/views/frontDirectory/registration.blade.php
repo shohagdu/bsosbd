@@ -38,11 +38,17 @@
                                                     <option value="{{$key}}">{{$title}}</option>
                                                 @endforeach
                                             </select>
+                                            @error('title')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-12 col-sm-9">
                                             <label id="levelFontSize">Name <span class="mandatory_field">(*)</span></label>
                                             <input id="name" type="text" name="name" required
                                             placeholder="Enter Name" class="form-control">
+                                            @error('name')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
 
 
@@ -52,21 +58,33 @@
                                             <label id="levelFontSize">Institute <span class="mandatory_field">(*)</span></label>
                                             <input id="institute" type="text" required name="institute" placeholder="Enter Institute"
                                                    class="form-control">
+                                            @error('institute')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label id="levelFontSize">Highest Degree <span class="mandatory_field">(*)</span></label>
                                             <input id="degree" type="text" required name="degree" placeholder="Enter Highest Degree"
                                                    class="form-control">
+                                            @error('degree')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label id="levelFontSize">Mobile No  <span class="mandatory_field">(*)</span></label>
                                             <input id="mobile_personal" required type="text" name="mobile" maxlength="11"
                                                    placeholder="Enter Mobile No(Applicant)" class="form-control">
+                                            @error('mobile')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label id="levelFontSize">E-mail <span class="mandatory_field">(*)</span></label>
-                                            <input id="email" required type="text" name="email" placeholder="Enter Email"
+                                            <input id="email" required type="email" name="email" placeholder="Enter Email"
                                                    class="form-control">
+                                            @error('email')
+                                                <div style="color: red;">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100 py-3" type="submit">Next</button>

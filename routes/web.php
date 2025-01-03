@@ -17,9 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/clearCache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return "All caches cleared!";
+});
+
+Route::get('/create-storage-link', function () {
+    Artisan::call('storage:link');
+    return "Storage Created Successfully";
+});
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
@@ -27,8 +36,11 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/registration', [HomeController::class, 'registration']);
 Route::get('/Breastbdcon2024', [HomeController::class, 'Breastbdcon2024']);
 Route::get('/internationalFaculty', [HomeController::class, 'internationalFaculty']);
+Route::get('/scientificSession', [HomeController::class, 'scientificSession']);
 Route::post('/updateWorkshopPaymentInfo', [HomeController::class, 'store']);
 Route::get('/registrationSuccess/{id}', [HomeController::class, 'registrationSuccess']);
+Route::get('/generateStorageLink', [HomeController::class, 'generateStorageLink']);
+
 
 // Checkout (URL) User Part
 Route::get('/bkash-pay', [BkashController::class, 'payment'])->name('url-pay');
@@ -40,8 +52,16 @@ Route::get('/bkash-callback', [BkashController::class, 'callback'])->name('url-c
 //})->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+
+
+    Route::get('/facultyMember', [AdminController::class, 'facultyMember'])->name('facultyMember');
+    Route::get('/addNewFacultyMember', [AdminController::class, 'addNewFacultyMember'])->name('addNewFacultyMember');
     Route::get('/updateFacultyMember/{id}', [AdminController::class, 'updateFacultyMember'])->name('updateFacultyMember');
     Route::post('/updatedStoreFacultyMember', [AdminController::class, 'updatedStoreFacultyMember'])->name('updatedStoreFacultyMember');
+
+    Route::get('/workshopApplicant', [AdminController::class, 'workshopApplicant'])->name('workshopApplicant');
+
 });
 
 
@@ -49,9 +69,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::get('/workshopApplicant', [HomeController::class, 'workshopApplicant'])->name('workshopApplicant');
-    Route::get('/facultyMember', [HomeController::class, 'facultyMember'])->name('facultyMember');
 });
 
 require __DIR__.'/auth.php';

@@ -6,6 +6,7 @@ use App\Models\Home;
 use App\Models\WorkshopRegistration ;
 use Illuminate\Http\Request;
 use App\Models\Faculty_member;
+use Illuminate\Support\Facades\Artisan;
 use DB;
 class HomeController extends Controller
 {
@@ -41,11 +42,15 @@ class HomeController extends Controller
     }
     public function internationalFaculty()
     {
-        $UK             =   Faculty_member::where('country','UK')->get();
-        $Turkey         =   Faculty_member::where('country','Turkey')->get();
-        $Australia      =   Faculty_member::where('country','Australia')->get();
-        $India          =   Faculty_member::where('country','India')->get();
+        $UK             =   Faculty_member::where('country','UK')->where('is_active',1)->get();
+        $Turkey         =   Faculty_member::where('country','Turkey')->where('is_active',1)->get();
+        $Australia      =   Faculty_member::where('country','Australia')->where('is_active',1)->get();
+        $India          =   Faculty_member::where('country','India')->where('is_active',1)->get();
         return view('frontDirectory.internationalFaculty',compact('UK','Turkey','Australia','India'));
+    }
+    public function scientificSession()
+    {
+        return view('frontDirectory.scientificSession');
     }
 
     public function registrationSuccess($id)
@@ -68,9 +73,14 @@ class HomeController extends Controller
             'title'         => 'required| integer',
             'name'          => 'required|string',
             'institute'     => 'required|string',
-            'mobile'     => 'required|string',
-            'email'     => 'required|string',
+            'mobile'        => 'required|string',
+            'email'     => [
+                'required',
+                'string',
+                'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            ],
         ]);
+
         $data=[
             'title'         =>  $request->title??NULL,
             'member_id'     =>  date('ymd').rand(999,10000),
@@ -90,45 +100,28 @@ class HomeController extends Controller
         return redirect('/registrationSuccess/'.encrypt($insertedId));
 
     }
-    public function workshopApplicant(){
-        $allApplicant= WorkshopRegistration::where(['is_active'=>1])->get();
-        return view('admin.applicant',compact('allApplicant'));
-    }
-    public function facultyMember(){
-        $facultyMember= Faculty_member::whereIn('is_active',[1,2])->get();
-        return view('admin.facultyMember',compact('facultyMember'));
-    }
+
+
 
 
     /**
      * Display the specified resource.
      */
-    public function show(Home $home)
+    public function generateStorageLink()
     {
-        //
+        try {
+            // Run the artisan command
+            Artisan::call('storage:link');
+
+            // Get the output for feedback
+            $output = Artisan::output();
+
+            // Return or display the output
+            return response()->json(['message' => 'Storage link created successfully.', 'output' => $output]);
+        } catch (\Exception $e) {
+            // Handle any errors
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Home $home)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Home $home)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Home $home)
-    {
-        //
-    }
 }

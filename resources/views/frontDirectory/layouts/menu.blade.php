@@ -17,23 +17,22 @@
                     <a href="{{ url('/') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='')?"active":'' }} ">Home</a>
 {{--                    <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>--}}
 
-                    <a class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='Breastbdcon2024')?"active":'' }}" href="{{ url('/Breastbdcon2024') }}">BREASTBDCON 2025</a>
+{{--                    <a class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='Breastbdcon2024')?"active":'' }}" href="{{ url('/Breastbdcon2024') }}">BREASTBDCON 2025</a>--}}
 
-                    <a class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='internationalFaculty')?"active":'' }}" href="{{ url('/internationalFaculty') }}">International Faculty</a>
+{{--                    <a class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='internationalFaculty')?"active":'' }}" href="{{ url('/internationalFaculty') }}">International Faculty</a>--}}
 
-                    <!--                        <a href="service.php" class="nav-item nav-link">Service</a>-->
-                    <!--                        <a href="price.php" class="nav-item nav-link">Pricing</a>-->
-                    <!--                        <div class="nav-item dropdown">-->
-                    <!--                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>-->
-                    <!--                            <div class="dropdown-menu m-0">-->
-                    <!--                                <a href="blog.html" class="dropdown-item">Blog Grid</a>-->
-                    <!--                                <a href="detail.html" class="dropdown-item">Blog Detail</a>-->
-                    <!--                                <a href="team.html" class="dropdown-item">The Team</a>-->
-                    <!--                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>-->
-                    <!--                                <a href="appointment.html" class="dropdown-item">Appointment</a>-->
-                    <!--                                <a href="search.html" class="dropdown-item">Search</a>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
+
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">BREASTBDCON 2025</a>
+                       <div class="dropdown-menu m-0">
+                          <a href="{{ url('/Breastbdcon2024') }}" class="dropdown-item">About</a>
+                           <a href="{{ url('/internationalFaculty') }}" class="dropdown-item">International Faculty</a>
+                           <a href="{{ url('/scientificSession') }}" class="dropdown-item">Scientific Session</a>
+{{--                           <a href="testimonial.html" class="dropdown-item">Testimonial</a>--}}
+{{--                           <a href="appointment.html" class="dropdown-item">Appointment</a>--}}
+{{--                           <a href="search.html" class="dropdown-item">Search</a>--}}
+                       </div>
+                   </div>
                     <a href="{{ url('/registration') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='registration')?"active":'' }}">Registration</a>
                     <a href="{{ url('/contact') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='contact')?"active":'' }}">Contact</a>
 
