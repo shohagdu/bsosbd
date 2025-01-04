@@ -376,16 +376,39 @@ class BkashController extends Controller
             $res_array = !empty($response)? json_decode($response, true):NULL;
             if (array_key_exists("statusCode", $res_array) && $res_array['statusCode'] == '0000' && array_key_exists("transactionStatus", $res_array) && $res_array['transactionStatus'] == 'Completed') {
 
+
                 $applicantInfo=[
                     'is_payment_status'   =>  1,
                     'bkash_success_response'=> $response,
                     'to_bksah'            => NULL,
                     'bkash_mobile'        => $res_array['customerMsisdn']??NULL,
                     'bkash_trans_id'      => $res_array['trxID']??NULL,
-                    'updated_at'        =>  date('Y-m-d H:i:s'),
+                    'received_amount'     => $res_array['amount']??NULL,
+                    'updated_at'          =>  date('Y-m-d H:i:s'),
                     'updated_ip'          =>  NULL,
                 ];
                 DB::table('workshop_registration')->where('payment_id',$res_array['paymentID'])->update($applicantInfo);
+
+
+                $applicantData = WorkshopRegistration::where('payment_id',$res_array['paymentID'])->first();
+
+                if(!empty($applicantData)) {
+                    $msg="Congrats! ". $applicantData->name??NULL.",  Registration is Completed Successfully, Workshop on 'BREASTBDCON 2025' Registration ID". $applicantData->member_id??NULL." and get an email within 24 hrs.";
+                    $smsEmail = [
+                        'visitor_id'        => $applicantData->id??NULL,
+                        'mobile_number'     => $applicantData->mobile??NULL,
+                        'email'             => $applicantData->email??NULL,
+                        'msg'               => $msg,
+                        'send_sms_status'   => 1,
+                        'send_email_status' => 1,
+                        'ins_date'          => date('Y-m-d H:i:s'),
+                        'ins_by'            => NULL,
+                    ];
+                    DB::table('sms_history')->insert($smsEmail);
+                }
+
+
+
 
 
                 // payment success case

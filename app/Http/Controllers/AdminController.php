@@ -16,12 +16,75 @@ class AdminController extends Controller
         $totalApplicant         = WorkshopRegistration::where(['is_active'=>1])->count();
         $totalFacultyMember     = Faculty_member::where(['is_active'=>1])->count();
         $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->orderBy('id','DESC')->limit(10)->get();
-        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant'));
+        $totalReceivedAmnt= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->sum('received_amount');
+
+        $ctgWiseReceived = WorkshopRegistration::selectRaw("
+                CASE
+                    WHEN package_category = 1 THEN 'Delegate'
+                    WHEN package_category = 2 THEN 'Trainee'
+                    ELSE 'Other'
+                END as package_category_label,
+                CASE
+                    WHEN attend_days = 1 THEN 'One Day'
+                    WHEN attend_days = 2 THEN 'Both Days'
+                    WHEN attend_days = 3 THEN 'Both Days'
+                    ELSE 'Other'
+                END as attend_days_label,
+                SUM(received_amount) as total_receive_amount,
+                COUNT(id) as totalApplicant
+            ")
+            ->whereNotNull('package_category')
+            ->where('is_payment_status', 1)
+            ->where('received_amount', '>', 0)
+            ->groupBy('package_category', 'attend_days')
+            ->orderBy('package_category', 'ASC')
+            ->get();
+
+        $titleWiseReceived = WorkshopRegistration::selectRaw("
+                CASE
+                    WHEN title = 1 THEN 'Professor'
+                    WHEN title = 2 THEN 'Associate Professor'
+                    WHEN title = 3 THEN 'Senior Consultant'
+                    WHEN title = 4 THEN 'Assistant Professor'
+                    WHEN title = 5 THEN 'Junior Consultant'
+                    WHEN title = 6 THEN 'Postgraduate Dr.'
+                    WHEN title = 7 THEN 'Doctor'
+                    ELSE 'Other'
+                END as title_label,
+                 CASE
+                    WHEN attend_days = 1 THEN 'One Day'
+                    WHEN attend_days = 2 THEN 'Both Days'
+                    WHEN attend_days = 3 THEN 'Both Days'
+                    ELSE 'Other'
+                END as attend_days_label,
+                SUM(received_amount) as total_receive_amount,
+                COUNT(id) as totalApplicant
+            ")
+            ->whereNotNull('title')
+            ->where('is_payment_status', 1)
+            ->where('received_amount', '>', 0)
+            ->groupBy('title', 'attend_days')
+            ->orderBy('title', 'ASC')
+            ->get();
+
+
+        //  dd($ctgWiseReceived);
+        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant','totalReceivedAmnt','ctgWiseReceived','titleWiseReceived'));
     }
 
     public function workshopApplicant(){
         $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->get();
         return view('admin.applicant',compact('allApplicant'));
+    }
+    public function viewApplicant($id){
+        $id=decrypt($id)??'';
+        if(!empty($id)){
+            $applicant =    WorkshopRegistration::where('id',$id)->first();
+        }else{
+            $applicant =   [];
+        }
+        $doctorTitle      =   Home::getDoctorTitle();
+        return view('admin.applicant.show',compact('applicant','doctorTitle'));
     }
 
     public function facultyMember(){

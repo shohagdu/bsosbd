@@ -10,10 +10,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xl-6 col-xxl-5 d-flex">
+        <div class="col-xl-12 col-xxl-12 d-flex">
             <div class="w-100">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -49,11 +49,90 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Total Received Amount</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="stat text-primary">
+                                            <i class="align-middle" data-feather="users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="mt-1 mb-3">{{ $totalReceivedAmnt??'0.00' }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-lg-12 col-xxl-12 d-flex">
+            <div class="card flex-fill">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Summery Reports</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Package</th>
+                                <th>Days</th>
+                                <th> Applicant</th>
+                                <th> Reveived</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if(!empty($ctgWiseReceived))
+                                @foreach($ctgWiseReceived as $ctgReceived)
+                                    <tr>
+                                        <td>{{ $ctgReceived->package_category_label??NULL }}</td>
+                                        <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
+                                        <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
+                                        <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-6" >
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Days</th>
+                                <th> Applicant</th>
+                                <th> Reveived</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if(!empty($titleWiseReceived))
+                                @foreach($titleWiseReceived as $ctgReceived)
+                                    <tr>
+                                        <td>{{ $ctgReceived->title_label??NULL }}</td>
+                                        <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
+                                        <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
+                                        <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
+
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-12 col-lg-12 col-xxl-12 d-flex">

@@ -9,6 +9,6 @@ class Home extends Model
 {
     use HasFactory;
     public static function getDoctorTitle(){
-       return [1=>'Professor',2=>'Associate Professor',3=>'Senior Consultant',4=>'Assistant Professor',5=>'Junior Consultant',6=>'Postgraduate Dr.',7=>'Doctor',8=>'Trainee'];
+       return [1=>'Professor',2=>'Associate Professor',3=>'Senior Consultant',4=>'Assistant Professor',5=>'Junior Consultant',6=>'Postgraduate Dr.',7=>'Doctor'];
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BkashController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,8 @@ Route::get('/create-storage-link', function () {
     return "Storage Created Successfully";
 });
 
+Route::get('/send-email', [EmailController::class, 'sendEmail']);
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
@@ -52,15 +55,13 @@ Route::get('/bkash-callback', [BkashController::class, 'callback'])->name('url-c
 //})->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-
-
-
     Route::get('/facultyMember', [AdminController::class, 'facultyMember'])->name('facultyMember');
     Route::get('/addNewFacultyMember', [AdminController::class, 'addNewFacultyMember'])->name('addNewFacultyMember');
     Route::get('/updateFacultyMember/{id}', [AdminController::class, 'updateFacultyMember'])->name('updateFacultyMember');
     Route::post('/updatedStoreFacultyMember', [AdminController::class, 'updatedStoreFacultyMember'])->name('updatedStoreFacultyMember');
 
     Route::get('/workshopApplicant', [AdminController::class, 'workshopApplicant'])->name('workshopApplicant');
+    Route::get('/viewApplicant/{id}', [AdminController::class, 'viewApplicant'])->name('viewApplicant');
 
 });
 
