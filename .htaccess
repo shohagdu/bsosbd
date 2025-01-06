@@ -1,11 +1,12 @@
 <IfModule mod_rewrite.c>
+
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-#    <Files .env>
-#        Order allow,deny
-#        Deny from all
-#    </Files>
 
     RewriteEngine On
 
@@ -22,4 +23,21 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    <Files .env>
+        Order Allow,Deny
+        Deny from all
+    </Files>
+
+# # Deny access to other potentially sensitive files
+    <FilesMatch "\.(htaccess|git|svn|sh|md)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+
+    # Block access to .git and .svn directories
+    <FilesMatch "^\.git|\.svn">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
 </IfModule>
