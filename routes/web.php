@@ -32,6 +32,7 @@ Route::get('/create-storage-link', function () {
 });
 
 Route::get('/send-email', [EmailController::class, 'sendEmail']);
+Route::get('/sendSms', [EmailController::class, 'sendSms']);
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
