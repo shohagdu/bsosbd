@@ -43,6 +43,7 @@ Route::get('/internationalFaculty', [HomeController::class, 'internationalFacult
 Route::get('/scientificSession', [HomeController::class, 'scientificSession']);
 Route::post('/updateWorkshopPaymentInfo', [HomeController::class, 'store']);
 Route::get('/registrationSuccess/{id}', [HomeController::class, 'registrationSuccess']);
+Route::get('/regSuccess/{id}', [HomeController::class, 'regSuccess']);
 Route::get('/generateStorageLink', [HomeController::class, 'generateStorageLink']);
 
 

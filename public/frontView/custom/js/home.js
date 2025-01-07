@@ -19,11 +19,11 @@ $(document).ready(function() {
             $(".TRAINEES").show();
             $(".DELEGATES").hide();
             $(".showAmountDiv").show();
-            $("#amount").val('3000.00');
-            $("#showAmount").html('3000.00');
+            // $("#amount").val('3000.00');
+            // $("#showAmount").html('3000.00');
 
-            // $("#amount").val('1.00');
-            // $("#showAmount").html('1.00');
+            $("#amount").val('1.00');
+            $("#showAmount").html('1.00');
         }
 
     });

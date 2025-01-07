@@ -7,7 +7,7 @@
                 <?php
                     $daysAttend=[
                         1=> "1st day (BDT 3,000) ",
-                        2=> "Both days (BDT 5,000)",
+                        2=> "2nd days [Live Surgery] (BDT 5,000)",
                     ];
                 ?>
                 <div class="col-lg-12">

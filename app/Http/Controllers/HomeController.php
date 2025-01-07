@@ -57,8 +57,19 @@ class HomeController extends Controller
     {
         $id=decrypt($id);
         if(!empty($id)) {
+            $doctorTitle      =   Home::getDoctorTitle();
             $registrationInfo = WorkshopRegistration::where('id', $id)->first();
-            return view('frontDirectory.registrationSuccess', compact('registrationInfo'));
+            return view('frontDirectory.registrationSuccess', compact('registrationInfo','doctorTitle'));
+        }
+    }
+
+    public function regSuccess($id)
+    {
+        $id=decrypt($id);
+        if(!empty($id)) {
+            $doctorTitle      =   Home::getDoctorTitle();
+            $registrationInfo = WorkshopRegistration::where('id', $id)->first();
+            return view('frontDirectory.regSuccess', compact('registrationInfo','doctorTitle'));
         }
     }
 

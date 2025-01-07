@@ -296,7 +296,8 @@ class BkashController extends Controller
             }
         } elseif ($validatedData['packageCategory'] == 2) {
             $durationPresent = 3;
-            if ($validatedData['amount'] != 3000) {
+//            if ($validatedData['amount'] != 3000) {
+            if ($validatedData['amount'] != 1) {
                 return redirect('/registrationSuccess/'.$validatedData['applicantID'])
                     ->with('error', 'Amount Mismatch: Trainee Both Days (BDT 3000)');
             }
@@ -393,7 +394,9 @@ class BkashController extends Controller
                 $applicantData = WorkshopRegistration::where('payment_id',$res_array['paymentID'])->first();
 
                 if(!empty($applicantData)) {
-                    $msg="Congrats! ". $applicantData->name??NULL.",  Registration is Completed Successfully, Workshop on 'BREASTBDCON 2025' Registration ID". $applicantData->member_id??NULL." and get an email within 24 hrs.";
+                    $applicantName  =  (!empty($applicantData->name)?$applicantData->name:'');
+                    $applicantID    =  (!empty($applicantData->member_id)?$applicantData->member_id:'');
+                    $msg    =   "Congrats! ". $applicantName.", Registration is Completed Successfully for 'BREASTBDCON 2025'. ID No ". $applicantID;
                     $smsEmail = [
                         'visitor_id'        => $applicantData->id??NULL,
                         'mobile_number'     => $applicantData->mobile??NULL,
@@ -406,17 +409,8 @@ class BkashController extends Controller
                     ];
                     DB::table('sms_history')->insert($smsEmail);
                 }
-
-
-
-
-
-                // payment success case
-//                return view('bkash.success')->with([
-//                    'response' => $res_array['trxID']
-//                ]);
-
-                return redirect('/registration')->with('success', 'Successfully Complete your registration Payment. TrxID is '.$res_array['trxID']);
+                return redirect('regSuccess/'.encrypt($applicantData->id));
+               // return redirect('/registration')->with('success', 'Successfully Complete your registration Payment. TrxID is '.$res_array['trxID']);
             }
 
             return redirect('/registration')->with('error', $res_array['statusMessage']);

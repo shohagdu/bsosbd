@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label id="levelFontSize">Mobile No  <span class="mandatory_field">(*)</span></label>
-                                            <input id="mobile_personal" required type="text" name="mobile" maxlength="11"
+                                            <input id="mobile_personal" required type="text" name="mobile" maxlength="11" minlength="11"
                                                    placeholder="Enter Mobile No(Applicant)" class="form-control">
                                             @error('mobile')
                                                 <div style="color: red;">{{ $message }}</div>
