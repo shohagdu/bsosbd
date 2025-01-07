@@ -86,7 +86,7 @@
                                                 </div>
                                                 <div class="form-group TRAINEES">
                                                     <label class="form-check-label" style="color:green;font-weight: bold;font-size:18px;">
-                                                        Both Days( BDT 3,000)
+                                                        Both Days (TK 3,000)
                                                     </label>
                                                 </div>
                                                 <div class="form-group showAmountDiv">

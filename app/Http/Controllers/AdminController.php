@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
     public function dashboard(){
-        $totalApplicant         = WorkshopRegistration::where(['is_active'=>1])->count();
+        $totalApplicant         = WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->count();
         $totalFacultyMember     = Faculty_member::where(['is_active'=>1])->count();
         $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->orderBy('id','DESC')->limit(10)->get();
         $totalReceivedAmnt= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->sum('received_amount');
