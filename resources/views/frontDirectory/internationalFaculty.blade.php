@@ -9,7 +9,7 @@
             </div>
             <div class="row gx-5">
                 @if(!empty($UK))
-                    <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">UK</h1>
+                    <h1 class="d-inline-block  text-uppercase border-bottom border-5 text-center">London</h1>
                     @foreach($UK as $ukFaculty)
                         <div class=" col-lg-6" style="margin-top: 10px;">
                             <div class="row g-0 bg-light rounded overflow-hidden">
@@ -92,8 +92,8 @@
                             <div class="row g-0 bg-light rounded overflow-hidden">
                                 <div class="col-12 col-sm-5 h-100">
 
-                                    @if(!empty($facultyAustralia->image) && Storage::disk('public')->exists($facultyAustralia->image))
-                                        <img src="{{ asset('storage/app/public/' . $facultyAustralia->image) }}" style="width: 100%;height: 200px;">
+                                    @if(!empty($facultyIndia->image) && Storage::disk('public')->exists($facultyIndia->image))
+                                        <img src="{{ asset('storage/app/public/' . $facultyIndia->image) }}" style="width: 100%;height: 200px;">
                                     @else
                                         <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="width: 100%;height:200px;">
                                     @endif
