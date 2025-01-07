@@ -6,8 +6,8 @@
             <div class="row gx-5">
                 <?php
                     $daysAttend=[
-                        1=> "1st day (BDT 3,000) ",
-                        2=> "2nd days [Live Surgery] (BDT 5,000)",
+                        1=> "First day Tk 3000 ",
+                        2=> "Both days (2nd day - live surgery) - Tk 5000",
                     ];
                 ?>
                 <div class="col-lg-12">
@@ -20,7 +20,7 @@
                                     </tr>
                                     <tr>
                                         <th style="width: 30%;">Name</th>
-                                        <td> {{$registrationInfo->title??NULL}}{{$registrationInfo->name??NULL}}</td>
+                                        <td>   {{$doctorTitle[$registrationInfo->title]??NULL}}    {{$registrationInfo->name??NULL}}</td>
                                     </tr>
                                     <tr>
                                         <th>Institute</th>
@@ -56,13 +56,14 @@
                                             @csrf
                                             <div class="row g-3">
                                                 <div class="form-group">
-                                                    <label id="levelFontSize">Duration is present <span class="mandatory_field">(*)</span> </label>
+                                                    <label id="levelFontSize">Payment Category <span class="mandatory_field">(*)</span> </label>
                                                 </div>
                                                 <div class="form-group">
                                                     <input  type="radio" value="1" class="changePackageCategory" name="packageCategory" id="packageCategory1">
                                                     <label class="form-check-label" for="packageCategory1">
                                                         DELEGATES
                                                     </label>
+                                                    &nbsp;&nbsp;
                                                     <input  type="radio" value="2" name="packageCategory" class="changePackageCategory" id="packageCategory2">
                                                     <label class="form-check-label" for="packageCategory2">
                                                         TRAINEES
@@ -73,15 +74,18 @@
                                                     foreach($daysAttend as $keyDays=> $days){
                                                         ?>
                                                     <input  type="radio" class="delegatesSubCtg" name="durationPresent" value="{{ $keyDays }}" id="durationPresent{{ $keyDays }}" >
-                                                    <label class="form-check-label" for="flexRadioDefault2" style="color:green;font-weight: bold;">
+                                                    <label class="form-check-label" for="durationPresent{{ $keyDays }}" style="color:green;font-weight: bold;font-size:18px;">
                                                             <?php echo $days ?>
                                                     </label>
+                                                    <div class="clearfix"></div>
+                                                    <div style="height: 10px;"></div>
+
                                                         <?php
                                                     }
                                                     ?>
                                                 </div>
                                                 <div class="form-group TRAINEES">
-                                                    <label class="form-check-label" style="color:green;font-weight: bold;">
+                                                    <label class="form-check-label" style="color:green;font-weight: bold;font-size:18px;">
                                                         Both Days( BDT 3,000)
                                                     </label>
                                                 </div>
@@ -133,6 +137,7 @@
             font-size: 22px;
             color:red;
         }
+
     </style>
 @endsection
 
