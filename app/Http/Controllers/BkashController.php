@@ -296,8 +296,8 @@ class BkashController extends Controller
             }
         } elseif ($validatedData['packageCategory'] == 2) {
             $durationPresent = 3;
-//            if ($validatedData['amount'] != 3000) {
-            if ($validatedData['amount'] != 1) {
+            if ($validatedData['amount'] != 3000) {
+//            if ($validatedData['amount'] != 1) {
                 return redirect('/registrationSuccess/'.$validatedData['applicantID'])
                     ->with('error', 'Amount Mismatch: Trainee Both Days (BDT 3000)');
             }
