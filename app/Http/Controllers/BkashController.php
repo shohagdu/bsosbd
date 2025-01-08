@@ -280,6 +280,7 @@ class BkashController extends Controller
         }
 
         $applicantData = WorkshopRegistration::find($id);
+
         if (!$applicantData) {
             return redirect('/registration')->with('error', 'Applicant Information is required.');
         }
@@ -301,8 +302,19 @@ class BkashController extends Controller
                 return redirect('/registrationSuccess/'.$validatedData['applicantID'])
                     ->with('error', 'Amount Mismatch: Trainee Both Days (BDT 3000)');
             }
-        }
 
+
+//            $applicantDegree = "m.bbs"; // Example input
+            $applicantDegree    =   $applicantData->degree??NULL;
+            $allowedValues = ["MBBS", "M.B.B.S", "mbbs", "m.b.b.s", "m.bbs"];
+
+            if (in_array($applicantDegree, $allowedValues, true)) {
+//                echo "Valid input.";
+            } else {
+                return redirect('/registrationSuccess/'.$validatedData['applicantID'])
+                    ->with('error', 'Trainee Category Only MBBS degree Allow. Your provided degree is '.$applicantDegree. ". Please Change Payment Category");
+            }
+        }
 
         $bodyData = [
             'mode' => '0011',
