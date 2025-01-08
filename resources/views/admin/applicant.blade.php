@@ -8,18 +8,19 @@
                 </div>
             <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
-                        <th>S/N</th>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Name</th>
-                        <th>Institute</th>
-                        <th>Degree</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Amount</th>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <th>S/N</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Degree/Institute</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Amount</th>
+                    <th>Package Ctg</th>
+                    <th>Days</th>
+                    <td></td>
+                </tr>
                 </thead>
                 <tbody>
                     @php($i=1)
@@ -28,13 +29,14 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $applicant->member_id??NULL }}</td>
-                                <td>{{ $applicant->title??NULL }}</td>
+                                <td>{{ $doctorTitle[$applicant->title]??NULL }}</td>
                                 <td>{{ $applicant->name??NULL }}</td>
-                                <td>{{ $applicant->institute??NULL }}</td>
-                                <td>{{ $applicant->degree??NULL }}</td>
+                                <td>{{ $applicant->degree??NULL }} <br/>{{ $applicant->institute??NULL }}</td>
                                 <td>{{ $applicant->mobile??NULL }}</td>
                                 <td>{{ $applicant->email??NULL }}</td>
                                 <td>{{ $applicant->amount??NULL }}</td>
+                                <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
+                                <td>{{ !empty($applicant->attend_days)?($applicant->attend_days==1?"1st Day":'Both Days'):NULL }}</td>
                                 <td><a href="{{ url('/viewApplicant/'.encrypt($applicant->id)) }}" class="btn btn-primary btn-sm">View</a>
 
                             </tr>

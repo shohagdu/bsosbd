@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
     public function dashboard(){
+        $doctorTitle            =   Home::getDoctorTitle();
         $totalApplicant         = WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->count();
         $totalFacultyMember     = Faculty_member::where(['is_active'=>1])->count();
         $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->orderBy('id','DESC')->limit(10)->get();
@@ -69,12 +70,13 @@ class AdminController extends Controller
 
 
         //  dd($ctgWiseReceived);
-        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant','totalReceivedAmnt','ctgWiseReceived','titleWiseReceived'));
+        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant','totalReceivedAmnt','ctgWiseReceived','titleWiseReceived','doctorTitle'));
     }
 
     public function workshopApplicant(){
-        $allApplicant= WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->get();
-        return view('admin.applicant',compact('allApplicant'));
+        $allApplicant       =   WorkshopRegistration::where(['is_active'=>1,'is_payment_status'=>1])->get();
+        $doctorTitle        =   Home::getDoctorTitle();
+        return view('admin.applicant',compact('allApplicant','doctorTitle'));
     }
     public function viewApplicant($id){
         $id=decrypt($id)??'';

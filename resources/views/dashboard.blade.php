@@ -90,6 +90,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $tApplicantS ='0';
+                                $tReceivedS ='0';
+                            ?>
                             @if(!empty($ctgWiseReceived))
                                 @foreach($ctgWiseReceived as $ctgReceived)
                                     <tr>
@@ -97,10 +101,19 @@
                                         <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
                                         <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
                                         <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                            <?php $tApplicantS+=$ctgReceived->totalApplicant;$tReceivedS+=$ctgReceived->total_receive_amount;
+                                            ?>
                                     </tr>
                                 @endforeach
                             @endif
                             </tbody>
+                            <tfoot>
+                            <tr>
+                                <th colspan="2">Summery</th>
+                                <th>{{ $tApplicantS }}</th>
+                                <th>{{ number_format($tReceivedS,2)??NULL }}</th>
+                            </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <div class="col-sm-6" >
@@ -114,6 +127,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $tApplicant ='0';
+                                $tReceived ='0';
+                            ?>
                             @if(!empty($titleWiseReceived))
                                 @foreach($titleWiseReceived as $ctgReceived)
                                     <tr>
@@ -121,10 +138,19 @@
                                         <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
                                         <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
                                         <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                        <?php $tApplicant+=$ctgReceived->totalApplicant;$tReceived+=$ctgReceived->total_receive_amount;
+                                        ?>
                                     </tr>
                                 @endforeach
                             @endif
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="2">Summery</th>
+                                    <th>{{ $tApplicant }}</th>
+                                    <th>{{ number_format($tReceived,2)??NULL }}</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -148,11 +174,12 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Name</th>
-                        <th>Institute</th>
-                        <th>Degree</th>
+                        <th>Degree/Institute</th>
                         <th>Mobile</th>
                         <th>Email</th>
                         <th>Amount</th>
+                        <th>Package Ctg</th>
+                        <th>Days</th>
                         <td></td>
                     </tr>
                     </thead>
@@ -163,13 +190,14 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $applicant->member_id??NULL }}</td>
-                                <td>{{ $applicant->title??NULL }}</td>
+                                <td>{{ $doctorTitle[$applicant->title]??NULL }}</td>
                                 <td>{{ $applicant->name??NULL }}</td>
-                                <td>{{ $applicant->institute??NULL }}</td>
-                                <td>{{ $applicant->degree??NULL }}</td>
+                                <td>{{ $applicant->degree??NULL }} <br/>{{ $applicant->institute??NULL }}</td>
                                 <td>{{ $applicant->mobile??NULL }}</td>
                                 <td>{{ $applicant->email??NULL }}</td>
                                 <td>{{ $applicant->amount??NULL }}</td>
+                                <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
+                                <td>{{ !empty($applicant->attend_days)?($applicant->attend_days==1?"1st Day":'Both Days'):NULL }}</td>
                                 <td><a href="{{ url('/viewApplicant/'.encrypt($applicant->id)) }}" class="btn btn-primary btn-sm">View</a>
 
                             </tr>
