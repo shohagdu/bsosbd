@@ -67,7 +67,8 @@
         <div class="row g-5">
             <div class="col-lg-4 col-md-6">
                 <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Bangladesh Cancer Society, 120/3 Darus Salam, Mirpur, Bangladesh</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Medi Aid General Hospital,
+                    70/C, Lake Circus Kalabaga, Dhaka, Bangladesh</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@bsosbd.com</p>
 {{--                <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+880 1711 161199</p>--}}
             </div>
