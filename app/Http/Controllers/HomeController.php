@@ -144,4 +144,12 @@ class HomeController extends Controller
             return view('frontDirectory.viewFacultyDetails', compact('facultyMember'));
         }
     }
+
+    public function invitation()
+    {
+            return view('frontDirectory.invitation');
+
+    }
+
+
 }

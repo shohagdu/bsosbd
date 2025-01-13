@@ -28,6 +28,7 @@
                           <a href="{{ url('/Breastbdcon2024') }}" class="dropdown-item">About</a>
                            <a href="{{ url('/internationalFaculty') }}" class="dropdown-item">International Faculty</a>
                            <a href="{{ url('/scientificSession') }}" class="dropdown-item">Scientific Session</a>
+                           <a href="{{ url('/invitation') }}" class="dropdown-item">Invitation</a>
 {{--                           <a href="testimonial.html" class="dropdown-item">Testimonial</a>--}}
 {{--                           <a href="appointment.html" class="dropdown-item">Appointment</a>--}}
 {{--                           <a href="search.html" class="dropdown-item">Search</a>--}}
