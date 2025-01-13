@@ -82,18 +82,37 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Status</label>
-                                <select class="form-control form-control-lg"   name="is_active"  >
-                                    <option value="">Select One</option>
-                                    <option value="1" {{ !empty($facultyMemberInfo->is_active) && $facultyMemberInfo->is_active==1?'selected':'' }}>Active</option>
-                                    <option value="2"  {{ !empty($facultyMemberInfo->is_active) &&  $facultyMemberInfo->is_active==2?'selected':'' }}>In-Active</option>
-                                </select>
-                                @error('is_active')
-                                    <span style="color: red;">{{ $message }}</span>
-                                @enderror
+                            <div class="row">
+                                <div class="col-6 col-lg-6 col-xxl-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Status</label>
+                                        <select class="form-control form-control-lg"   name="is_active"  >
+                                            <option value="">Select One</option>
+                                            <option value="1" {{ !empty($facultyMemberInfo->is_active) && $facultyMemberInfo->is_active==1?'selected':'' }}>Active</option>
+                                            <option value="2"  {{ !empty($facultyMemberInfo->is_active) &&  $facultyMemberInfo->is_active==2?'selected':'' }}>In-Active</option>
+                                        </select>
+                                        @error('is_active')
+                                        <span style="color: red;">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-6 col-xxl-6">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">View Order</label>
+                                        <input class="form-control form-control-lg" value="{{ $facultyMemberInfo->view_order??'' }}" type="text" name="view_order" placeholder="Enter View Order" />
+                                        @error('view_order')
+                                            <span style="color: red;">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                             </div>
 
+                            <div class="mb-3">
+                                <label class="form-label">Biography</label>
+                                <textarea rows="6" class="form-control form-control-lg"   name="biography" placeholder="Enter Biography" >{{ $facultyMemberInfo->biography??'' }}</textarea>
+                            </div>
 
                             <div class=" mt-3">
                                 <input type="hidden" name="facultyMemberId" id="facultyMemberId" value="{{ $facultyMemberInfo->id??'' }}">

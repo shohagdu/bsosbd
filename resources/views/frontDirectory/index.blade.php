@@ -5,18 +5,10 @@
     <!-- Hero Start -->
     <div class="container-fluid">
         <div class="row">
-            <img src="{{ asset('public/frontView/img/bsos_banner.jpg') }}" >
+            <img src="{{ asset('public/frontView/img/banner.jpeg') }}" style="max-height: 500px; width: 100%;">
         </div>
-{{--        <div class="container py-5">--}}
-{{--            <div class="row justify-content-start">--}}
-{{--                <div class="col-lg-12 text-center " style="margin-top: 250px;">--}}
-{{--                    <div class="pt-2" >--}}
-{{--                        <a href="{{ url('/registration') }}" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Registration</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
+
     <!-- Hero End -->
 
 
@@ -46,4 +38,82 @@
         </div>
     </div>
     <!-- Home Page End -->
+
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true" >
+        <div class="modal-dialog" >
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <div class="col-sm-10" style="text-align: center">
+                        <a href="{{ url('/registration') }}" class="btn btn-success custom-btn blink">Registration Now</a>
+                        <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">International Faculties</a>
+
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ asset('public/frontView/img/poster.jpeg')  }}" style="width: 100%;">
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url('/registration') }}" class="btn btn-success custom-btn blink">Registration Now</a>
+                    <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">International Faculties</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            welcomeModal.show();
+        });
+    </script>
+    <style>
+        .modal-dialog {
+            max-width: 70%;
+        }
+
+        @media (max-width: 768px) {
+            .modal-dialog {
+                max-width: 90%;
+            }
+        }
+
+        .custom-btn {
+            font-size: 16px; /* Slightly larger font */
+            padding: 10px 20px; /* Add padding for a better look */
+            border-radius: 25px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+            text-align: center;
+        }
+
+        .custom-btn:hover {
+            transform: translateY(-2px); /* Lift the button slightly */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+            opacity: 0.9; /* Dim slightly */
+        }
+
+        .custom-btn:active {
+            transform: translateY(0); /* Reset lift on click */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on click */
+            opacity: 1; /* Reset dimming */
+        }
+
+        /* Blinking effect */
+        .blink {
+            animation: blinking 1.5s infinite; /* Duration of blinking and infinite repeat */
+        }
+
+        @keyframes blinking {
+            0%, 100% {
+                opacity: 1; /* Fully visible */
+            }
+            50% {
+                opacity: 0.5; /* Slightly transparent */
+            }
+        }
+
+    </style>
 @endsection

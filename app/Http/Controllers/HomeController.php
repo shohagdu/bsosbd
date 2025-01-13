@@ -42,11 +42,13 @@ class HomeController extends Controller
     }
     public function internationalFaculty()
     {
-        $UK             =   Faculty_member::where('country','UK')->where('is_active',1)->get();
-        $Turkey         =   Faculty_member::where('country','Turkey')->where('is_active',1)->get();
-        $Australia      =   Faculty_member::where('country','Australia')->where('is_active',1)->get();
-        $India          =   Faculty_member::where('country','India')->where('is_active',1)->get();
-        return view('frontDirectory.internationalFaculty',compact('UK','Turkey','Australia','India'));
+        $UK             =   Faculty_member::where('country','UK')->where('is_active',1)->orderBy('view_order','ASC')->get();
+        $Turkey         =   Faculty_member::where('country','Turkey')->where('is_active',1)->orderBy('view_order','ASC')->get();
+        $Australia      =   Faculty_member::where('country','Australia')->where('is_active',1)->orderBy('view_order','ASC')->get();
+        $India          =   Faculty_member::where('country','India')->where('is_active',1)->orderBy('view_order','ASC')->get();
+        $China          =   Faculty_member::where('country','China')->where('is_active',1)->orderBy('view_order','ASC')->get();
+
+        return view('frontDirectory.internationalFaculty',compact('UK','Turkey','Australia','India','China'));
     }
     public function scientificSession()
     {
@@ -134,5 +136,12 @@ class HomeController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
-
+    public function viewFacultyDetails($id)
+    {
+        $id=decrypt($id);
+        if(!empty($id)) {
+            $facultyMember = Faculty_member::where('id', $id)->first();
+            return view('frontDirectory.viewFacultyDetails', compact('facultyMember'));
+        }
+    }
 }

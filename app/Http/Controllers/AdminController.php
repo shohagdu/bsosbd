@@ -97,7 +97,7 @@ class AdminController extends Controller
 
     public function addNewFacultyMember(){
         $facultyMemberInfo =   [];
-        $country = ['UK','Turkey','Australia','India'];
+        $country = ['UK','Turkey','Australia','India','China'];
 
         return view('admin.facultyMember.update',compact('facultyMemberInfo','country'));
     }
@@ -109,7 +109,7 @@ class AdminController extends Controller
         }else{
             $facultyMemberInfo =   [];
         }
-        $country = ['UK','Turkey','Australia','India'];
+        $country = ['UK','Turkey','Australia','India','China'];
         return view('admin.facultyMember.update',compact('facultyMemberInfo','country'));
     }
 
@@ -121,6 +121,7 @@ class AdminController extends Controller
             'name'          => 'required|string',
             'institute'     => 'required|string',
             'designation'   => 'required|string',
+            'view_order'   => 'required',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate the image
         ]);
 
@@ -142,6 +143,8 @@ class AdminController extends Controller
                 'institute'     => $request->institute ?? NULL,
                 'designation'   => $request->designation ?? NULL,
                 'is_active'     => $request->is_active ?? NULL,
+                'view_order'     => $request->view_order ?? NULL,
+                'biography'     => $request->biography ?? NULL,
                 'created_time' => date('Y-m-d H:i:s'),
                 'created_ip'    =>  $request->ip()??NULL,
             ];
@@ -157,6 +160,8 @@ class AdminController extends Controller
                 'degree_info'   => $request->degree ?? NULL,
                 'institute'     => $request->institute ?? NULL,
                 'designation'   => $request->designation ?? NULL,
+                'view_order'     => $request->view_order ?? NULL,
+                'biography'     => $request->biography ?? NULL,
                 'is_active'     => $request->is_active ?? NULL,
                 'updated_time'  => date('Y-m-d H:i:s'),
                 'updated_ip'    => $request->ip()??NULL,
