@@ -1,11 +1,10 @@
 @extends('frontDirectory.layouts.master')
 @section('title', 'Contact Us')
 @section('main_content')
+    @include('frontDirectory.layouts.event_sub_menu')
     <div class="container-fluid py-5">
         <div class="container">
-            <!--        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Registration</h5>-->
             <div class="row gx-5">
-
                 <div class="col-lg-12">
                     <div class="row justify-content-center position-relative" >
                         <div class="col-lg-12">

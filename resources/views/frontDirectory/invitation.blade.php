@@ -1,6 +1,7 @@
 @extends('frontDirectory.layouts.master')
 @section('title', 'Dashboard')
 @section('main_content')
+    @include('frontDirectory.layouts.event_sub_menu')
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row gx-5">
