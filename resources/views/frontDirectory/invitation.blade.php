@@ -24,19 +24,19 @@
                     <p>
                     <table  style="width: 100%;color:#333;">
 
-{{--                        <tr>--}}
-{{--                            <td style="padding-left: 100px;text-align: center">--}}
-{{--                                <img src="{{ asset('public/frontView/img/Mizanur-Rahman.jpg') }}" style="height: 150px;"> </td>--}}
-{{--                            <td style="padding-left: 100px;text-align: center">--}}
-{{--                                <img src="{{ asset('public/frontView/img/dr_jahangirKabir.png') }}" style="height: 150px;">--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
                         <tr>
-                            <td style="padding-left: 40px;text-align: center">
+                            <td style="text-align: center">
+                                <img src="{{ asset('public/frontView/img/Mizanur-Rahman.jpg') }}" style="height: 200px;"> </td>
+                            <td style="text-align: center">
+                                <img src="{{ asset('public/frontView/img/dr_jahangirKabir.png') }}" style="height: 200px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;padding-top: 10px;">
                               <h5> Prof M. Mizanur Rahman </h5>
                                 <h6> Chairman</h6>
                             </td>
-                            <td style="padding-left: 100px;text-align: center"> <h5>Dr. Md Jahangir Kabir  </h5>
+                            <td style="text-align: center;padding-top: 10px;"> <h5>Dr. Md Jahangir Kabir  </h5>
                                 <h6> Secretary</h6>
                             </td>
                         </tr>
