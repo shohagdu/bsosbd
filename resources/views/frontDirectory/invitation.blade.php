@@ -10,7 +10,9 @@
                     <h4 class="display-6">BREASTBDCON 2025</h4>
                 </div>
                 <div class="col-lg-12">
-                    <p style="text-align: justify;color:#333;">Dear Colleague, Warm greetings from the Bangladesh School of Oncoplastic Surgery (BSOS). We are excited to announce the upcoming <b>BREASTBDCON 2025</b> , a prestigious international scientific program focused on breast cancer, which will take place on <b> 23rd and 24th February 2025</b>.
+                    <p style="text-align: justify;color:#333;font-size: 18px;">
+                       <b>Dear Colleague,</b>
+                        <br/> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Warm greetings from the Bangladesh School of Oncoplastic Surgery (BSOS). We are excited to announce the upcoming <b>BREASTBDCON 2025</b> , a prestigious international scientific program focused on breast cancer, which will take place on <b> 23rd and 24th February 2025</b>.
                         <br/>
                         <br/>
                         This will be our second international program, and we are delighted to host distinguished guests from Asia and Europe, including experts from the <b> UK, Turkey, India,  Australia and China </b>. The event will feature renowned speakers, moderators, panelists, and live surgery demonstrations.<br/><br/>
@@ -20,15 +22,25 @@
                         <br/>
                     </p>
                     <p>
-                    <table class="table-striped table table-bordered" style="width: 100%;color:#333;">
+                    <table  style="width: 100%;color:#333;">
+
+{{--                        <tr>--}}
+{{--                            <td style="padding-left: 100px;text-align: center">--}}
+{{--                                <img src="{{ asset('public/frontView/img/Mizanur-Rahman.jpg') }}" style="height: 150px;"> </td>--}}
+{{--                            <td style="padding-left: 100px;text-align: center">--}}
+{{--                                <img src="{{ asset('public/frontView/img/dr_jahangirKabir.png') }}" style="height: 150px;">--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
                         <tr>
-                            <td colspan="2" style="text-align: center;color: #333;">Organizing committee <br/>
-                                BREASTBDCON 2025</td>
+                            <td style="padding-left: 40px;text-align: center">
+                              <h5> Prof M. Mizanur Rahman </h5>
+                                <h6> Chairman</h6>
+                            </td>
+                            <td style="padding-left: 100px;text-align: center"> <h5>Dr. Md Jahangir Kabir  </h5>
+                                <h6> Secretary</h6>
+                            </td>
                         </tr>
-                        <tr>
-                            <td style="padding-left: 100px;text-align: center">Prof M. Mizanur Rahman <br/>Chairman</td>
-                            <td style="padding-left: 100px;text-align: center">Dr. Md Jahangir Kabir  <br/> Secretary</td>
-                        </tr>
+
                     </table>
                     </p>
 
