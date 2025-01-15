@@ -1,20 +1,4 @@
-{{--<x-app-layout>--}}
-{{--    <x-slot name="header">--}}
-{{--        <h2 class="font-semibold text-xl text-gray-800 leading-tight">--}}
-{{--            {{ __('Dashboard') }}--}}
-{{--        </h2>--}}
-{{--    </x-slot>--}}
 
-{{--    <div class="py-12">--}}
-{{--        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">--}}
-{{--            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">--}}
-{{--                <div class="p-6 text-gray-900">--}}
-{{--                    {{ __("You're logged in!") }}--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</x-app-layout>--}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +11,7 @@
     <meta name="keywords" content="BSOSBD">
 
     {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
-    <link rel="shortcut icon" href="{{ asset('public/adminView/img/icons/icon-48x48.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('public/logo/favicon.ico') }}" />
 
     {{--    <link rel="canonical" href="https://demo-basic.adminkit.io/" />--}}
 
@@ -86,14 +70,10 @@
                         </a>
 
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img src="{{ asset('adminView/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Admin</span>
+                             <span class="text-dark">Admin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-                            <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                            <a class="dropdown-item" href="{{ url('/profile') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
                             <div class="dropdown-divider"></div>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

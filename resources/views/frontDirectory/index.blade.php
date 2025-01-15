@@ -43,12 +43,12 @@
         <div class="modal-dialog" >
             <div class="modal-content" >
                 <div class="modal-header">
-                    <div class="col-sm-10" style="text-align: center">
+                    <div class="col-sm-11" style="text-align: center">
                         <a href="{{ url('/registration') }}" class="btn btn-success custom-btn blink">Registration Now</a>
-                        <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">International Faculties</a>
+                        <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">Know Our International Faculties</a>
 
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-1 " style="text-align:end">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="modal-footer">
                     <a href="{{ url('/registration') }}" class="btn btn-success custom-btn blink">Registration Now</a>
-                    <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">International Faculties</a>
+                    <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">Know Our International Faculties</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -71,12 +71,12 @@
     </script>
     <style>
         .modal-dialog {
-            max-width: 70%;
+            max-width: 80%;
         }
 
         @media (max-width: 768px) {
             .modal-dialog {
-                max-width: 90%;
+                max-width: 95%;
             }
         }
 

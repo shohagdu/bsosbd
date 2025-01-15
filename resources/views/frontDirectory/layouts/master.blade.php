@@ -8,10 +8,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="BSOS - Bangladesh School of Oncoplastic Surgery" name="keywords">
     <meta content="BSOS - Bangladesh School of Oncoplastic Surgery" name="description">
-
+    http://local.bsosbd.com/
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="{{ asset('public/logo/favicon.ico') }}">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">

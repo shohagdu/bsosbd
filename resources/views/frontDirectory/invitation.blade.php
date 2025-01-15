@@ -5,14 +5,11 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row gx-5">
-
+                <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Invitation</h5>
+                    <h4 class="display-6">BREASTBDCON 2025</h4>
+                </div>
                 <div class="col-lg-12">
-                    <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Invitation</h5>
-                        <h4 class="display-6">BREASTBDCON 2025</h4>
-                    </div>
-
-
                     <p style="text-align: justify;color:#333;">Dear Colleague, Warm greetings from the Bangladesh School of Oncoplastic Surgery (BSOS). We are excited to announce the upcoming <b>BREASTBDCON 2025</b> , a prestigious international scientific program focused on breast cancer, which will take place on <b> 23rd and 24th February 2025</b>.
                         <br/>
                         <br/>
