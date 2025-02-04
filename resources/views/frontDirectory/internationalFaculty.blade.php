@@ -17,7 +17,7 @@
                                 @if(!empty($ukFaculty->image) && Storage::disk('public')->exists($ukFaculty->image))
                                     <img src="{{ asset('storage/app/public/' . $ukFaculty->image) }}"  style="height: 350px;">
                                 @else
-                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;">
                                 @endif
                                 <div class="p-4" style="height: 250px;">
                                     <h3>{{ $ukFaculty->name??NULL }}</h3>
@@ -45,9 +45,9 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="bg-light rounded overflow-hidden">
                                 @if(!empty($facultyTurkey->image) && Storage::disk('public')->exists($facultyTurkey->image))
-                                    <img src="{{ asset('storage/app/public/' . $facultyTurkey->image) }}"  style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('storage/app/public/' . $facultyTurkey->image) }}"  style="height: 350px;">
                                 @else
-                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;">
                                 @endif
                                 <div class="p-4" style="height: 250px;">
                                     <h3>{{ $facultyTurkey->name??NULL }}</h3>
@@ -75,9 +75,9 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="bg-light rounded overflow-hidden">
                                 @if(!empty($facultyAustralia->image) && Storage::disk('public')->exists($facultyAustralia->image))
-                                    <img src="{{ asset('storage/app/public/' . $facultyAustralia->image) }}"  style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('storage/app/public/' . $facultyAustralia->image) }}"  style="height: 350px;">
                                 @else
-                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;">
                                 @endif
                                 <div class="p-4" style="height: 250px;">
                                     <h3>{{ $facultyAustralia->name??NULL }}</h3>
@@ -105,9 +105,9 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="bg-light rounded overflow-hidden">
                                 @if(!empty($facultyIndia->image) && Storage::disk('public')->exists($facultyIndia->image))
-                                    <img src="{{ asset('storage/app/public/' . $facultyIndia->image) }}"  style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('storage/app/public/' . $facultyIndia->image) }}"  style="height: 350px;">
                                 @else
-                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;">
                                 @endif
                                 <div class="p-4" style="height: 250px;">
                                     <h3>{{ $facultyIndia->name??NULL }}</h3>
@@ -136,9 +136,9 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="bg-light rounded overflow-hidden">
                                 @if(!empty($facultyChina->image) && Storage::disk('public')->exists($facultyChina->image))
-                                    <img src="{{ asset('storage/app/public/' . $facultyChina->image) }}"  style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('storage/app/public/' . $facultyChina->image) }}"  style="height: 350px;">
                                 @else
-                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
+                                    <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;">
                                 @endif
                                 <div class="p-4" style="height: 250px;">
                                     <h3>{{ $facultyChina->name??NULL }}</h3>
