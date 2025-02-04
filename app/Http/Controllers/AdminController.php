@@ -28,7 +28,7 @@ class AdminController extends Controller
                 CASE
                     WHEN attend_days = 1 THEN 'One Day'
                     WHEN attend_days = 2 THEN 'Both Days'
-                    WHEN attend_days = 3 THEN 'Both Days'
+                    WHEN attend_days = 3 THEN 'Both Days (Trainee)'
                     ELSE 'Other'
                 END as attend_days_label,
                 SUM(received_amount) as total_receive_amount,
@@ -55,7 +55,7 @@ class AdminController extends Controller
                  CASE
                     WHEN attend_days = 1 THEN 'One Day'
                     WHEN attend_days = 2 THEN 'Both Days'
-                    WHEN attend_days = 3 THEN 'Both Days'
+                    WHEN attend_days = 3 THEN 'Both Days (Trainee)'
                     ELSE 'Other'
                 END as attend_days_label,
                 SUM(received_amount) as total_receive_amount,

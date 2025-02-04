@@ -80,13 +80,13 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6" >
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped">
                             <thead>
                             <tr>
                                 <th>Package</th>
                                 <th>Days</th>
                                 <th> Applicant</th>
-                                <th> Reveived</th>
+                                <th> Received</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -100,7 +100,7 @@
                                         <td>{{ $ctgReceived->package_category_label??NULL }}</td>
                                         <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
                                         <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
-                                        <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                        <td>{{ number_format($ctgReceived->total_receive_amount,2)??NULL }}</td>
                                             <?php $tApplicantS+=$ctgReceived->totalApplicant;$tReceivedS+=$ctgReceived->total_receive_amount;
                                             ?>
                                     </tr>
@@ -117,13 +117,13 @@
                         </table>
                     </div>
                     <div class="col-sm-6" >
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped">
                             <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Days</th>
                                 <th> Applicant</th>
-                                <th> Reveived</th>
+                                <th> Received</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -137,7 +137,7 @@
                                         <td>{{ $ctgReceived->title_label??NULL }}</td>
                                         <td>{{ $ctgReceived->attend_days_label??NULL }}</td>
                                         <td>{{ $ctgReceived->totalApplicant??NULL }}</td>
-                                        <td>{{ $ctgReceived->total_receive_amount??NULL }}</td>
+                                        <td>{{ number_format($ctgReceived->total_receive_amount,2)??NULL }}</td>
                                         <?php $tApplicant+=$ctgReceived->totalApplicant;$tReceived+=$ctgReceived->total_receive_amount;
                                         ?>
                                     </tr>
