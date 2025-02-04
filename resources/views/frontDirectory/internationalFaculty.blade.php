@@ -15,7 +15,7 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="bg-light rounded overflow-hidden">
                                 @if(!empty($ukFaculty->image) && Storage::disk('public')->exists($ukFaculty->image))
-                                    <img src="{{ asset('storage/app/public/' . $ukFaculty->image) }}"  >
+                                    <img src="{{ asset('storage/app/public/' . $ukFaculty->image) }}"  style="height: 350px;">
                                 @else
                                     <img src="{{ asset('public/frontView/img/default.jpeg') }}" style="height: 350px;width: 100%;">
                                 @endif
