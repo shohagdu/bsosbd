@@ -69,6 +69,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/workshopApplicant', [AdminController::class, 'workshopApplicant'])->name('workshopApplicant');
     Route::get('/viewApplicant/{id}', [AdminController::class, 'viewApplicant'])->name('viewApplicant');
 
+    Route::get('/sumittedAbstract', [AdminController::class, 'sumittedAbstract'])->name('sumittedAbstract');
+
 });
 
 
