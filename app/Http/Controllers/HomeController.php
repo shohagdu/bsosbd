@@ -150,6 +150,60 @@ class HomeController extends Controller
             return view('frontDirectory.invitation');
 
     }
+    public function submitAbstract()
+    {
+        $doctorTitle      =   Home::getDoctorTitle();
+        return view('frontDirectory.submitAbstract',compact('doctorTitle'));
+
+    }
+
+    public function saveAbstract(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title'         => 'required| integer',
+            'name'          => 'required|string',
+            'institute'     => 'required|string',
+            'mobile'        => 'required|string',
+            'email'     => [
+                'required',
+                'string',
+                'regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            ],
+            'abstractFile' => 'required|mimes:pdf,doc,docx|max:5048'
+
+        ]);
+
+        $abstractFilePath = null;
+        if ($request->hasFile('abstractFile')) {
+            $image = $request->file('abstractFile');
+            $abstractFilePath = $image->store('abstract_file', 'public');
+        }
+
+        $data=[
+            'title'         =>  $request->title??NULL,
+            'member_id'     =>  date('ymd').rand(999,10000),
+            'name'          =>  $request->name??NULL,
+            'institute'     =>  $request->institute??NULL,
+            'degree'        =>  $request->degree??NULL,
+            'mobile'        =>  $request->mobile??NULL,
+            'email'         =>  $request->email??NULL,
+            'abstract_file' =>  $abstractFilePath,
+            'created_at'    =>  date('Y-m-d H:i:s'),
+            'created_ip'    =>  'NULL',
+        ];
+        $insertedId = DB::table('workshop_abstract_record')->insertGetId($data);
+        return redirect('/abstractSuccess/'.encrypt($insertedId));
+
+    }
+    public function abstractSuccess($id)
+    {
+        $id=decrypt($id);
+        if(!empty($id)) {
+            $doctorTitle      =   Home::getDoctorTitle();
+            $registrationInfo = DB::table('workshop_abstract_record')->where('id', $id)->first();
+            return view('frontDirectory.abstractSuccess', compact('registrationInfo','doctorTitle'));
+        }
+    }
 
 
 }

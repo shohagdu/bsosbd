@@ -35,6 +35,8 @@
                        </div>
                    </div>
                     <a href="{{ url('/registration') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='registration')?"active":'' }}">Registration</a>
+                    <a href="{{ url('/submitAbstract') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='submitAbstract')?"active":'' }}">Submit Abstract</a>
+
                     <a href="{{ url('/contact') }}" class="nav-item nav-link {{ (isset($fullUrl) && $lastSegment=='contact')?"active":'' }}">Contact</a>
 
                 </div>

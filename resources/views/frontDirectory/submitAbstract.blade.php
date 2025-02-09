@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row gx-5">
                 <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Registration</h5>
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Submit Abstract</h5>
                     <h4 class="display-6">BREASTBDCON 2025</h4>
                 </div>
                 <div class="col-lg-12">
@@ -22,14 +22,13 @@
                                 @endif
 
                                 @if(session('error'))
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <div class="alert alert-danger">
                                             {{ session('error') }}
                                         </div>
                                     </div>
                                 @endif
-                                <form action="{{url('/updateWorkshopPaymentInfo')}}" method="post">
-{{--                                <form action="{{ route('url-create') }}" method="post">--}}
+                                <form action="{{url('/saveAbstract')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row g-3">
                                         <div class="col-12 col-sm-3">
@@ -42,27 +41,23 @@
                                                 @endforeach
                                             </select>
                                             @error('title')
-                                                <div style="color: red;">{{ $message }}</div>
+                                            <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="col-12 col-sm-9">
                                             <label id="levelFontSize">Name <span class="mandatory_field">(*)</span></label>
                                             <input id="name" type="text" name="name" required
-                                            placeholder="Enter Name" class="form-control">
+                                                   placeholder="Enter Name" class="form-control">
                                             @error('name')
-                                                <div style="color: red;">{{ $message }}</div>
+                                            <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-
-
-
                                         <div class="col-12">
                                             <label id="levelFontSize">Institute <span class="mandatory_field">(*)</span></label>
                                             <input id="institute" type="text" required name="institute" placeholder="Enter Institute"
                                                    class="form-control">
                                             @error('institute')
-                                                <div style="color: red;">{{ $message }}</div>
+                                            <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="form-group">
@@ -70,7 +65,7 @@
                                             <input id="degree" type="text" required name="degree" placeholder="Enter Highest Degree"
                                                    class="form-control">
                                             @error('degree')
-                                                <div style="color: red;">{{ $message }}</div>
+                                            <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="form-group">
@@ -78,7 +73,7 @@
                                             <input id="mobile_personal" required type="text" name="mobile" maxlength="15" minlength="11"
                                                    placeholder="Enter Mobile No(Applicant)" class="form-control">
                                             @error('mobile')
-                                                <div style="color: red;">{{ $message }}</div>
+                                            <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="form-group">
@@ -86,11 +81,20 @@
                                             <input id="email" required type="email" name="email" placeholder="Enter Email"
                                                    class="form-control">
                                             @error('email')
+                                            <div style="color: red;">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label id="levelFontSize">Attach Abstract File <span class="mandatory_field">(*)</span> <span style="color:red"> [Only PDF & DOC file allow]</span></label>
+                                            <input id="abstractFile" required type="file" name="abstractFile"
+                                                   class="form-control">
+                                            @error('abstractFile')
                                                 <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                         </div>
+
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Next</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                                         </div>
 
                                     </div>

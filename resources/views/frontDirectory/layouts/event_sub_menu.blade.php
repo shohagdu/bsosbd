@@ -15,6 +15,8 @@
                                 <a href="{{ url('/invitation') }}">Invitation</a>
                                 <span>|</span>
                                 <a href="{{ url('/registration') }}">Registration</a>
+                                <span>|</span>
+                                <a href="{{ url('/submitAbstract') }}">Submit Abstract</a>
                             </div>
                         </div>
                     </div>

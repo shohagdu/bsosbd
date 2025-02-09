@@ -47,6 +47,9 @@ Route::get('/regSuccess/{id}', [HomeController::class, 'regSuccess']);
 Route::get('/generateStorageLink', [HomeController::class, 'generateStorageLink']);
 Route::get('/viewFacultyDetails/{id}', [HomeController::class, 'viewFacultyDetails']);
 Route::get('/invitation', [HomeController::class, 'invitation']);
+Route::get('/submitAbstract', [HomeController::class, 'submitAbstract']);
+Route::post('/saveAbstract', [HomeController::class, 'saveAbstract']);
+Route::get('/abstractSuccess/{id}', [HomeController::class, 'abstractSuccess']);
 
 // Checkout (URL) User Part
 Route::get('/bkash-pay', [BkashController::class, 'payment'])->name('url-pay');
