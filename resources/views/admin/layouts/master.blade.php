@@ -50,6 +50,12 @@
                         <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Faculty Member</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ url('/submittedAbstract') }}">
+                        <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Submitted Abstract</span>
+                    </a>
+                </li>
+
 
             </ul>
 

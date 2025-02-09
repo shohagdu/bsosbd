@@ -198,7 +198,7 @@ class AdminController extends Controller
             ]);
         }
     }
-    public function sumittedAbstract(){
+    public function submittedAbstract(){
         $doctorTitle      =   Home::getDoctorTitle();
         $abstractFile= DB::table('workshop_abstract_record')->whereIn('is_active',[1,2])->get();
         return view('admin.sumittedAbstract',compact('abstractFile','doctorTitle'));
