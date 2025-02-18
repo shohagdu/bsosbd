@@ -49,7 +49,7 @@
                 <p align="center" style="border-bottom: 1px solid #333;border-top: 1px solid #333;padding: 20px;"><span style="color: #c00000;"><span style="font-size: 25px;">Tea Break (11:00 am-11:15 am)</span></span></p>
                 <p align="center"></p>
                 <p style="font-size: 25px;color: #c00000;"> Session 3 (11:15 am - 11:45 am) </p>
-                <p align="center" style="color: #c00000;font-size: 25px;font-weight: bold;">Conference Lecture</p>
+                <p align="center" style="color: #c00000;font-size: 25px;font-weight: bold;">Oration lecture</p>
                 <p style="font-size: large;font-weight: bold;">Chairpersons </p>
                 <p>Prof Syed Mahbubul Alam</p>
                 <p>Prof Ahmed Syeed</p>
@@ -76,7 +76,7 @@
                 <p><span style="font-size: medium;">QA</span></p>
                 <p><br /><br /></p>
                 <p style="font-size: 25px;color: #c00000;">Session 5  (12:45 pm-01:15 pm)</p>
-                <p align="center"><span style="color: #c00000;"><span style="font-size: 25px">Lecture of the day</span></span></p>
+                <p align="center"><span style="color: #c00000;"><span style="font-size: 25px">Conference Lecture</span></span></p>
                 <p style="font-size: large;font-weight: bold;">Chairpersons </p>
                 <p><span style="font-size: medium;">Prof Feroze Quader </span></p>
                 <p><span style="font-size: medium;">Prof Md.Sanawar Hossain </span></p>
