@@ -126,7 +126,7 @@
                 <p>Prof.AMSM Sharafuzzaman</p>
                 <p>Prof.K.M.Ashraf Ali</p>
                 <p><span style="font-size: large;font-weight: bold;">Rapporteur: </span> Dr Jahangir Hussain</p>
-                <p> <span style="font-size: medium;">a) Evolutions of development of breast Pathology in Bangladesh- Prof Dr.Golam Mostafa</span></p>
+                <p> <span style="font-size: medium;">a) Evolutions of development of breast Pathology in Bangladesh - Prof. Dr. Mohammad Golam Mostafa</span></p>
                 <p><span style="font-size: medium;">b) Role of radiation oncology in Oncoplastic Breast Surgery &ndash; Prof Dr.Syed Akram Hussain </span></p>
                 <p><span style="font-size: medium;">c) Breast cancer surgery status in Bangladesh: Institution based practice &ndash; Dr Md Jahangir Kabir</span></p>
                 <p><span style="font-size: medium;"><strong>QA</strong></span></p>
