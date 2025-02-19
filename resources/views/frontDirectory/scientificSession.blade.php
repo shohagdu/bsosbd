@@ -71,7 +71,7 @@
                 <p><br /><br /></p>
                 <p style="font-size: 22px;font-weight: bold;">Introduction of the speakers</p>
                 <p><a name="_Hlk190501084"></a> <span style="font-size: large;">a) Molecular Biology and the Surgeon &ndash; Dr </span><span style="font-size: medium;">Chaitanyanand Koppiker</span></p>
-                <p><span style="font-size: large;">b) Molecular imaging &ndash; Prof M Mizanur Rahman</span></p>
+                <p><span style="font-size: large;">b) Molecular subtype and imaging– Prof M Mizanur Rahman</span></p>
                 <p><span style="font-size: large;">c) Metastatic Breast Cancer -Dr. </span><span style="font-size: medium;">Paul N Mainwaring</span></p>
                 <p><span style="font-size: medium;">QA</span></p>
                 <p><br /><br /></p>
