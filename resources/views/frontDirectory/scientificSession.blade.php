@@ -14,41 +14,47 @@
                 <p align="center"><span style="font-size: large;"><strong>Registration kit distribution -8:15 am</strong></span></p>
                 <p align="center"><span style="color: #ff0000;"><span style="font-size: 20px;"><strong>Scientific Programme</strong></span></span></p>
 
-                <p><span style="color: #ff0000;font-weight: bold;font-size:22px;">Introduction 8:45 am</span></p>
+                <div style="color: #ff0000;font-weight: bold;font-size:22px;">Introduction 8:45 am</div>
 
-                <p style="font-size: 20px;color: #c00000;">Session 1  (9.00 am - 10.00 am)</p>
-                <p align="center"><span style="color: #c00000;"><span style="font-size: 30px;">Invited lectures</span></span></p>
-                <p style="font-size: large;font-weight: bold;">Chairpersons </p>
-                <p><span style="font-size: medium;">Prof Dr. Rayhana Awwal</span></p>
-                <p><span style="font-size: medium;">Prof Dr. AFM Anwar Hossain</span></p>
-                <p><span style="font-size: medium;">Prof Dr.Sayeed Ahmed Siddiky</span></p>
-                <p><span style="font-size: large;font-weight: bold;">Rapporteur:</span> <span>Dr.  Zaman Ummay Humayra</span></p>
-                <p align="center"><br /><br /></p>
-                <p style="font-size: 20px;font-weight: bold;">Introduction of the speakers</p>
-                <p> <span style="font-size: large;">a) Monitoring post NACT response &ndash; </span><span style="font-size: large;">Dr Hasan karanlik</span></p>
-
-                <p><span style="font-size: large;">b) Dealing with non palpable lesions &ndash; Mr Dorin Dumitru</span></p>
-                <p><span style="font-size: large;">c) Multiple ipsilateral tumours -Prof John Benson</span></p>
-                <p><span style="font-size: large;">QA</span></p>
+                <div style="font-size: 20px;color: #c00000;margin-top: 10px;font-weight: bold"> <span style="border-bottom: 2px dotted red;"> Session 1  (9.00 am - 10.00 am)</span></div>
+                <div style="font-size: 20px;font-weight: bold;color: #c00000;text-align: center"><span style="border-bottom: 2px solid #c00000;"> Invited lectures</span></div>
+                <p>
+                    <div style="font-size: large;font-weight: bold;">Chairpersons: </div>
+                    <div style="font-size: medium;">Prof Dr. Rayhana Awwal</div>
+                    <div style="font-size: medium;">Prof Dr. AFM Anwar Hossain</div>
+                    <div style="font-size: medium;">Prof Dr.Sayeed Ahmed Siddiky</div>
+                    <div > <span style="font-size: large;font-weight: bold;">Rapporteur:</span>  <span>Dr.  Zaman Ummay Humayra</span></div>
+                </p>
+                <p >
+                    <div style="font-size: 20px;font-weight: bold;">Introduction of the speakers</div>
+                    <div style="font-size: large;">a) Monitoring post NACT response &ndash; Dr. Hasan karanlik</div>
+                    <div style="font-size: large;">b) Dealing with non palpable lesions &ndash; Mr Dorin Dumitru</div>
+                    <div style="font-size: large;">c) Multiple ipsilateral tumours - Prof. John Benson</div>
+                    <div style="font-size: large;">QA</div>
+                </p>
                 <p></p>
 
-                <p style="font-size: 20px;color: #c00000;">Session 2 (10.00 am- 11.00 am)</p>
-                <p align="center"><span style="color: #c00000;"><span style="font-size: 20px;font-weight: bold;">Basic Oncoplasty</span></span></p>
-                <p><span style="font-size: large;font-weight: bold;">Chairpersons </span></p>
-                <p>Prof Dr.Salma Sultana</p>
-                <p>Prof. Dr. M Khademul Islam</p>
-                <p>Prof (Brig,Gen. Retd) Dr.Masroor Hasan</p>
-                <p><span style="font-size: large;font-weight: bold;">Rapporteur: </span> Dr.Hasina Alam</p>
+                <div style="font-size: 20px;color: #c00000;margin-top: 10px;font-weight: bold"> <span style="border-bottom: 2px dotted red;"> Session 2 (10.00 am- 11.00 am)</span></div>
+                <div style="font-size: 20px;font-weight: bold;color: #c00000;text-align: center"><span style="border-bottom: 2px solid #c00000;">Basic Oncoplasty</span></div>
+                <p>
+                    <div style="font-size: large;font-weight: bold;">Chairpersons: </div>
+                    <div>Prof Dr.Salma Sultana</div>
+                    <div>Prof. Dr. M Khademul Islam</div>
+                    <div>Prof (Brig,Gen. Retd) Dr.Masroor Hasan</div>
+                    <div><span style="font-size: large;font-weight: bold;">Rapporteur: </span> Dr.Hasina Alam</div>
+                </p>
                 <p></p>
-                <p align="center"><span style="font-size: 20px;font-weight: bold;">Introduction of speaker 1</span></p>
-                <p> <span style="font-size: large;">Level I and II techniques-- Prof M. Umit Ugurlu</span></p>
-                <p><span style="font-size: large;">Reduction mammoplasty -Dr. Dorin Dumitru</span></p>
-                <p><span style="font-size: large;">Extreme Oncoplasty- Dr Hasan Karanlik</span></p>
-                <p><span style="font-size: large;">QA</span></p>
-                <p align="center"></p>
-                <p align="center" style="border-bottom: 1px solid #333;border-top: 1px solid #333;padding: 20px;"><span style="color: #c00000;"><span style="font-size: 20px;">Tea Break (11:00 am-11:15 am)</span></span></p>
-                <p align="center"></p>
-                <p style="font-size: 20px;color: #c00000;"> Session 3 (11:15 am - 11:45 am) </p>
+                <p align="center">
+                    <div style="font-size: 20px;font-weight: bold;text-align: center">Introduction of speaker 1</div>
+                    <div style="font-size: large;"> Level I and II techniques-- Prof M. Umit Ugurlu</div>
+                    <div style="font-size: large;">Reduction mammoplasty -Dr. Dorin Dumitru</div>
+                    <div style="font-size: large;">Extreme Oncoplasty- Dr Hasan Karanlik</div>
+                    <div style="font-size: large;">QA</div>
+                </p>
+
+                <div  style="border-bottom: 1px solid #333;border-top: 1px solid #333;padding: 10px;color: green;font-size: 20px;text-align: center;font-weight: bold">Tea Break (11:00 am-11:15 am)</div>
+
+                <div style="font-size: 20px;color: #c00000;font-weight: bold;margin-top: 30px;"> <span style="border-bottom: 2px dotted red;">Session 3 (11:15 am - 11:45 am)</span></div>
                 <p align="center" style="color: #c00000;font-size: 20px;font-weight: bold;">Oration lecture</p>
                 <p style="font-size: large;font-weight: bold;">Chairpersons </p>
                 <p>Prof Syed Mahbubul Alam</p>
@@ -235,7 +241,183 @@
             </div>
         </div>
     </div>
+    <style>
+        .title {
+            color: #7030a0;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        .event-date, .venue, .registration-time, .scientific-programme {
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .session {
+            margin-bottom: 20px;
+        }
+
+        .session-title {
+            font-size: 20px;
+            color: #c00000;
+        }
+
+        .session-heading {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .chairpersons, .speakers {
+            font-size: large;
+        }
+
+        .rapporteur {
+            font-weight: bold;
+        }
+
+        .tea-break, .lunch-break, .poster-discussion, .evening-session, .inauguration, .dinner {
+            font-size: 20px;
+            color: #c00000;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .divider {
+            border-bottom: 3px dotted #333;
+        }
+
+        .speaker-introduction {
+            font-weight: bold;
+        }
+
+    </style>
 @endsection
+
+
+{{--<div class="row gx-5">--}}
+{{--    <p class="title">BREASTBDCON 2025</p>--}}
+{{--    <p class="event-date">Day 1 (23 February, 2025)</p>--}}
+{{--    <p class="venue">Venue: Shahid Abu Sayeed International Convention Center, Mintu Road, Shahbagh, Dhaka</p>--}}
+{{--    <p class="registration-time">Registration kit distribution - 8:15 am</p>--}}
+
+{{--    <p class="scientific-programme">Scientific Programme</p>--}}
+
+{{--    <!-- Session 1 -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 1 (9:00 am - 10:00 am)</p>--}}
+{{--        <p class="session-heading">Invited lectures</p>--}}
+{{--        <div class="chairpersons">--}}
+{{--            <p>Prof Dr. Rayhana Awwal</p>--}}
+{{--            <p>Prof Dr. AFM Anwar Hossain</p>--}}
+{{--            <p>Prof Dr. Sayeed Ahmed Siddiky</p>--}}
+{{--        </div>--}}
+{{--        <p class="rapporteur">Rapporteur: Dr. Zaman Ummay Humayra</p>--}}
+{{--        <p class="speaker-introduction">Introduction of the speakers</p>--}}
+{{--        <ul class="speakers">--}}
+{{--            <li>Monitoring post NACT response – Dr Hasan Karanlik</li>--}}
+{{--            <li>Dealing with non-palpable lesions – Mr Dorin Dumitru</li>--}}
+{{--            <li>Multiple ipsilateral tumours - Prof John Benson</li>--}}
+{{--        </ul>--}}
+{{--        <p>QA</p>--}}
+{{--    </div>--}}
+
+{{--    <!-- Session 2 -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 2 (10:00 am - 11:00 am)</p>--}}
+{{--        <p class="session-heading">Basic Oncoplasty</p>--}}
+{{--        <div class="chairpersons">--}}
+{{--            <p>Prof Dr. Salma Sultana</p>--}}
+{{--            <p>Prof. Dr. M Khademul Islam</p>--}}
+{{--            <p>Prof (Brig, Gen. Retd) Dr. Masroor Hasan</p>--}}
+{{--        </div>--}}
+{{--        <p class="rapporteur">Rapporteur: Dr. Hasina Alam</p>--}}
+{{--        <p class="speaker-introduction">Introduction of speaker 1</p>--}}
+{{--        <ul class="speakers">--}}
+{{--            <li>Level I and II techniques - Prof M. Umit Ugurlu</li>--}}
+{{--            <li>Reduction mammoplasty - Dr. Dorin Dumitru</li>--}}
+{{--            <li>Extreme Oncoplasty - Dr Hasan Karanlik</li>--}}
+{{--        </ul>--}}
+{{--        <p>QA</p>--}}
+{{--    </div>--}}
+
+{{--    <!-- Tea Break -->--}}
+{{--    <p class="tea-break">Tea Break (11:00 am - 11:15 am)</p>--}}
+
+{{--    <!-- Session 3 -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 3 (11:15 am - 11:45 am)</p>--}}
+{{--        <p class="session-heading">Oration lecture</p>--}}
+{{--        <div class="chairpersons">--}}
+{{--            <p>Prof Syed Mahbubul Alam</p>--}}
+{{--            <p>Prof Ahmed Syeed</p>--}}
+{{--            <p>Prof Rafiqus Salehin</p>--}}
+{{--        </div>--}}
+{{--        <p class="rapporteur">Rapporteur: Dr. Shakera Ahmed</p>--}}
+{{--        <p class="speaker-introduction">Introduction of the speakers</p>--}}
+{{--        <p>Changing practice of breast cancer surgery - Dr. Chaitanyanand Koppiker</p>--}}
+{{--        <p>QA</p>--}}
+{{--    </div>--}}
+
+{{--    <!-- Session 4 -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 4 (11:45 am - 12:45 pm)</p>--}}
+{{--        <p class="session-heading">Master class - Molecular Biology</p>--}}
+{{--        <div class="chairpersons">--}}
+{{--            <p>Prof Dr. Laila Shirin</p>--}}
+{{--            <p>Prof Dr. Md Sana Ullah</p>--}}
+{{--            <p>Prof Dr. A.M.S.M. Sharfuzzaman</p>--}}
+{{--        </div>--}}
+{{--        <p class="rapporteur">Rapporteur: Dr. Sayera Banu Sheuly</p>--}}
+{{--        <p class="speaker-introduction">Introduction of the speakers</p>--}}
+{{--        <ul class="speakers">--}}
+{{--            <li>Molecular Biology and the Surgeon - Dr. Chaitanyanand Koppiker</li>--}}
+{{--            <li>Molecular subtype and imaging - Prof M. Mizanur Rahman</li>--}}
+{{--            <li>Metastatic Breast Cancer - Dr. Paul N. Mainwaring</li>--}}
+{{--        </ul>--}}
+{{--        <p>QA</p>--}}
+{{--    </div>--}}
+
+{{--    <!-- Session 5 -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 5 (12:45 pm - 01:15 pm)</p>--}}
+{{--        <p class="session-heading">Conference Lecture</p>--}}
+{{--        <div class="chairpersons">--}}
+{{--            <p>Prof Feroze Quader</p>--}}
+{{--            <p>Prof Md. Sanawar Hossain</p>--}}
+{{--            <p>Prof Dr. Mohammad Masud Karim</p>--}}
+{{--        </div>--}}
+{{--        <p class="rapporteur">Rapporteur: Dr. Ahmed Sami-Al-Hasan</p>--}}
+{{--        <p class="speaker-introduction">Introduction of the speakers</p>--}}
+{{--        <ul class="speakers">--}}
+{{--            <li>Asian Problem Asian Solution – Prof Chintamoni</li>--}}
+{{--            <li>Breast specialty in Bangladesh: its Prospects – Prof Moudud Hossain Alamgir</li>--}}
+{{--        </ul>--}}
+{{--    </div>--}}
+
+{{--    <!-- Lunch Break -->--}}
+{{--    <p class="lunch-break">Lunch Break (02:15 pm - 3:00 pm)</p>--}}
+
+{{--    <!-- Further sessions follow the same pattern -->--}}
+{{--    <div class="session">--}}
+{{--        <p class="session-title">Session 6 (03:00 pm - 03:45 pm)</p>--}}
+{{--        <p class="session-heading">Master Class</p>--}}
+{{--        <!-- Chairpersons and Speakers for Session 6 -->--}}
+{{--    </div>--}}
+
+{{--    <!-- Poster Discussion -->--}}
+{{--    <p class="poster-discussion">Poster Discussion (7:00 pm - 7:30 pm)</p>--}}
+
+{{--    <!-- Evening Session -->--}}
+{{--    <p class="evening-session">Evening Session (7:30 pm - 8:30 pm)</p>--}}
+{{--    <p class="inauguration">Inauguration and Reception of Guest Faculties</p>--}}
+
+{{--    <p class="dinner">Dinner (8:30 pm - 10:00 pm)</p>--}}
+{{--    <p class="divider"></p>--}}
+{{--    <p class="event-date">Day two (24 February, 2025)</p>--}}
+{{--    <p class="venue">Venue: National Institute of Cancer Research and Hospital Auditorium, Mohakhali, Dhaka.</p>--}}
+{{--</div>--}}
+
 
 
 
