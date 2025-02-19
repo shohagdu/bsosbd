@@ -45,8 +45,10 @@
                 <div class="modal-header">
                     <div class="col-sm-11" style="text-align: center">
                         <a href="{{ url('/registration') }}" class="btn btn-success custom-btn blink">Registration Now</a>
+                        <a href="{{ url('/scientificSession') }}" class="btn btn-info custom-btn blink">Scientific Session</a>
                         <a href="{{ url('/internationalFaculty') }}" class="btn btn-primary custom-btn ">Know Our International Faculties</a>
                         <a href="{{ url('/submitAbstract') }}" class="btn btn-warning custom-btn ">Submit Abstract</a>
+
 
                     </div>
                     <div class="col-sm-1 " style="text-align:end">
