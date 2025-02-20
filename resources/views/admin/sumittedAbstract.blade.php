@@ -26,6 +26,8 @@
                     <tr>
                         <th style="width: 5%;">S/N</th>
                         <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
                         <th>Submitted File</th>
                         <th>Institute</th>
                         <th>Degree</th>
@@ -38,6 +40,8 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $doctorTitle[$faculty->title]??null }} {{ $faculty->name??null }}</td>
+                                <td> {{ $faculty->email??null }}</td>
+                                <td> {{ $faculty->mobile??null }}</td>
                                 <td>
                                     @if(!empty($faculty->abstract_file) && Storage::disk('public')->exists($faculty->abstract_file))
                                         <a href="{{ asset('storage/app/public/' . $faculty->abstract_file) }}" target="_blank" >Abstract File</a>
