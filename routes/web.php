@@ -83,4 +83,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/clear-config', function() {
+    Artisan::call('config:clear');
+    return "Config cache cleared!";
+});
+
 require __DIR__.'/auth.php';
