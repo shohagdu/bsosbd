@@ -20,7 +20,7 @@
                         <th>Degree/Institute</th>
                         <th>Mobile</th>
                         <th>Email</th>
-                        <th>Package Ctg</th>
+                        <th>Package</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,9 +35,6 @@
                                 <td>{{ $applicant->mobile??NULL }}</td>
                                 <td>{{ $applicant->email??NULL }}</td>
                                 <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
-
-
-
                             </tr>
                         @endforeach
                     @endif

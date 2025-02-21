@@ -7,7 +7,7 @@ use App\Models\Home;
 use App\Models\WorkshopRegistration ;
 use Illuminate\Http\Request;
 use App\Models\Faculty_member;
-use DB;
+use DB,PDF;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -219,6 +219,42 @@ class AdminController extends Controller
         $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'kit_collect_counter_no'=>$countID,'is_payment_status'=>1])->get();
         return view('admin.showKitDistributeDetails',compact('allApplicant','doctorTitle','countID'));
     }
+    public function showKitDistributeDetailsPDF($countID=NULL){
+        $doctorTitle        =   Home::getDoctorTitle();
+//        $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'kit_collect_counter_no'=>$countID,'is_payment_status'=>1])->get();
+//
+        // Check if $countID is "ALL"
+        if ($countID == 'ALL') {
+            // If "ALL", don't filter by kit_collect_counter_no
+            $allApplicant = DB::table('workshop_registration')
+                ->where(['is_active' => 1, 'is_payment_status' => 1])
+                ->get();
+        } else {
+            // If a specific $countID is provided, filter by kit_collect_counter_no
+            $allApplicant = DB::table('workshop_registration')
+                ->where(['is_active' => 1, 'kit_collect_counter_no' => $countID, 'is_payment_status' => 1])
+                ->get();
+        }
+
+
+        // Generate the PDF with the appropriate data
+        $pdf = PDF::loadView('admin.showKitDistributeDetailsPDF', compact('allApplicant', 'doctorTitle', 'countID'))
+            ->setPaper('A4', 'landscape') // Set paper size and orientation
+            ->setOptions([
+                'isHtml5ParserEnabled' => true, // Enable HTML5 parser for styling
+                'isPhpEnabled' => true, // Enable PHP for page numbers
+                'defaultFont' => 'Arial', // Default font for the document
+                'margin_top' => 20, // Top margin (in mm)
+                'margin_left' => 15, // Left margin (in mm)
+                'margin_right' => 15, // Right margin (in mm)
+                'margin_bottom' => 20, // Bottom margin (in mm)
+            ]);
+
+
+        return $pdf->stream('Kit-Distribute-Counter-No' . $countID . '.pdf');
+    }
+
+
     public function kitDistributionSmsGenerate(){
         $doctorTitle        =   Home::getDoctorTitle();
         $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'is_payment_status'=>1])->limit(1)->get();
