@@ -7,9 +7,8 @@ use App\Models\Home;
 use App\Models\WorkshopRegistration ;
 use Illuminate\Http\Request;
 use App\Models\Faculty_member;
-use DB;
+use DB,PDF;
 use Illuminate\Support\Facades\Session;
-use Barryvdh\DomPDF\Facade as PDF;
 
 class AdminController extends Controller
 {
