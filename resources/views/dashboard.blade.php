@@ -76,18 +76,58 @@
         <div class="col-12 col-lg-12 col-xxl-12 d-flex">
             <div class="card flex-fill">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Summery Reports</h5>
+                    <h5 class="card-title mb-0">Kit Distribute Reports</h5>
                 </div>
                 <div class="row">
                     <div class="col-sm-6" >
                         <table class="table table-bordered table-striped">
                             <thead>
+                                <tr>
+                                    <th>Counter No</th>
+                                    <th>Total Applicant</th>
+                                    <th> Start ID </th>
+                                    <th> End ID </th>
+                                    <th> # </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php $totalKit=0 ?>
+                            @if(!empty($kitDistribute))
+                                @foreach($kitDistribute as $kit)
+                                    <?php
+                                        $totalKit+=$kit->total_records;
+                                    ?>
+                                    <tr>
+                                        <th>COUNTER # {{ $kit->kit_collect_counter_no??NULL }}
+                                            @if($kit->kit_collect_counter_no==7)
+                                                (1st Day)
+                                            @endif
+                                        </th>
+                                        <td>{{ $kit->total_records??NULL }}</td>
+                                        <td>{{ $kit->start_id??NULL }}</td>
+                                        <td>{{ $kit->end_id??NULL }}</td>
+                                        <td>
+                                            <a href="{{ url('showKitDistributeDetails/'.$kit->kit_collect_counter_no) }}" class="btn btn-primary btn-xs">View</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            </tbody>
+                            <tfoot>
                             <tr>
-                                <th>Package</th>
-                                <th>Days</th>
-                                <th> Applicant</th>
-                                <th> Received</th>
+                                <th >Total</th>
+                                <th colspan="4"><?php echo $totalKit ?></th>
                             </tr>
+                            </tfoot>
+                        </table>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Package</th>
+                                    <th>Days</th>
+                                    <th> Applicant</th>
+                                    <th> Received</th>
+                                </tr>
                             </thead>
                             <tbody>
                             <?php
@@ -115,6 +155,9 @@
                             </tr>
                             </tfoot>
                         </table>
+
+
+
                     </div>
                     <div class="col-sm-6" >
                         <table class="table table-bordered table-striped">

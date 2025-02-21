@@ -11,6 +11,7 @@ class Sms_history extends Model
     protected $table = 'sms_history';
 
     public static function SendSms($mobile,$sms) {
+//        a0aa3280fd9
         $url = 'https://www.24bulksmsbd.com/api/smsSendApi';
         $data = array(
             'customer_id'   => 1196,

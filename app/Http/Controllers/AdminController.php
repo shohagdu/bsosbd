@@ -68,9 +68,20 @@ class AdminController extends Controller
             ->orderBy('title', 'ASC')
             ->get();
 
+        $kitDistribute = DB::table('workshop_registration')
+            ->select(
+                'kit_collect_counter_no',
+                DB::raw('COUNT(*) AS total_records'),
+                DB::raw('MIN(kit_collect_sl_no) AS start_id'),
+                DB::raw('MAX(kit_collect_sl_no) AS end_id')
+            )
+            ->where('is_payment_status', 1)
+            ->groupBy('kit_collect_counter_no')
+            ->orderBy('kit_collect_counter_no', 'ASC')
+            ->get();
 
         //  dd($ctgWiseReceived);
-        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant','totalReceivedAmnt','ctgWiseReceived','titleWiseReceived','doctorTitle'));
+        return view('dashboard',compact('totalApplicant','totalFacultyMember','allApplicant','totalReceivedAmnt','ctgWiseReceived','titleWiseReceived','doctorTitle','kitDistribute'));
     }
 
     public function workshopApplicant(){
@@ -202,6 +213,127 @@ class AdminController extends Controller
         $doctorTitle      =   Home::getDoctorTitle();
         $abstractFile= DB::table('workshop_abstract_record')->whereIn('is_active',[1,2])->get();
         return view('admin.sumittedAbstract',compact('abstractFile','doctorTitle'));
+    }
+    public function showKitDistributeDetails($countID){
+        $doctorTitle        =   Home::getDoctorTitle();
+        $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'kit_collect_counter_no'=>$countID,'is_payment_status'=>1])->get();
+        return view('admin.showKitDistributeDetails',compact('allApplicant','doctorTitle','countID'));
+    }
+    public function kitDistributionSmsGenerate(){
+        $doctorTitle        =   Home::getDoctorTitle();
+        $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'is_payment_status'=>1])->limit(1)->get();
+
+        $dumpSmsHistory=[];
+        foreach ($allApplicant as $applicantData) {
+
+            if(!empty($applicantData)) {
+                $applicantName  =  (!empty($applicantData->name)?$applicantData->name:'');
+                $applicantID    =  (!empty($applicantData->member_id)?$applicantData->member_id:'');
+                $kit_collect_counter_no    =  (!empty($applicantData->kit_collect_counter_no)?$applicantData->kit_collect_counter_no:'');
+                $kit_collect_sl_no    =  (!empty($applicantData->kit_collect_sl_no)?$applicantData->kit_collect_sl_no:'');
+
+                $msg    =   "Dear, \n". $applicantName.", Thank you for participating in BREASTBDCON 2025.\nYour Kit Collection COUNTER NO # ". $kit_collect_counter_no.
+                    ",\nSL NO # ".$kit_collect_sl_no.
+                    ",\nID # ".$applicantID.
+                    "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka ";
+
+//Dear,
+//Md.Mizanur Rahman, Thank you for participating in BREASTBDCON 2025.
+//Your Kit Collection COUNTER NO # 2,
+//SL NO # 1,
+//ID # 2501071363
+//Venue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka
+
+                $smsEmail = [
+                    'visitor_id'        => $applicantData->id??NULL,
+                    'mobile_number'     => $applicantData->mobile??NULL,
+                    'email'             => $applicantData->email??NULL,
+                    'msg'               => $msg,
+                    'send_sms_status'   => 1,
+                    'send_email_status' => 1,
+                    'ins_date'          => date('Y-m-d H:i:s'),
+                    'ins_by'            => NULL,
+                ];
+                DB::table('sms_history')->insert($smsEmail);
+
+                $dumpSmsHistory[]=$smsEmail;
+            }
+       }
+        dd($dumpSmsHistory);
+
+
+    }
+
+
+
+    public function oneDaysApplicant(){
+        /*
+
+
+       UPDATE   workshop_registration SET `kit_collect_counter_no`= 2 WHERE  is_payment_status=1 AND is_active=1 AND attend_days in (2,3) ORDER BY id ASC limit 60;
+
+       UPDATE workshop_registration
+        SET kit_collect_counter_no = 3
+        WHERE id IN (
+            SELECT id FROM (
+                SELECT id FROM workshop_registration
+                WHERE is_payment_status = 1
+                AND is_active = 1
+                AND attend_days IN (2,3)
+                ORDER BY id ASC
+                LIMIT 60 OFFSET 60
+            ) AS subquery
+        );
+
+       UPDATE workshop_registration
+SET kit_collect_counter_no = 4
+WHERE is_payment_status = 1
+AND is_active = 1
+AND attend_days IN (2,3)
+AND id BETWEEN 954 AND 1233;
+
+        UPDATE workshop_registration
+SET kit_collect_counter_no = 5
+WHERE is_payment_status = 1
+AND is_active = 1
+AND attend_days IN (2,3)
+AND id BETWEEN 1235 AND 1459;
+
+
+ UPDATE workshop_registration
+SET kit_collect_counter_no = 6
+WHERE is_payment_status = 1
+AND is_active = 1
+AND attend_days IN (2,3)
+AND id BETWEEN 1461 AND 1711;
+
+UPDATE   workshop_registration SET `kit_collect_counter_no`=7  WHERE is_payment_status=1 AND is_active=1 AND attend_days =1 ORDER BY id ASC;
+
+
+SELECT kit_collect_counter_no, COUNT(*),  MIN(id) AS start_id,
+    MAX(id) AS end_id FROM `workshop_registration` WHERE is_payment_status=1 GROUP BY kit_collect_counter_no ORDER BY kit_collect_counter_no ASC;
+
+
+        UPDATE workshop_registration
+SET `kit_collect_sl_no` = (@counter := @counter + 1)
+WHERE is_payment_status = 1 AND is_active=1
+ORDER BY id ASC;
+
+
+
+
+
+
+        SELECT * FROM `workshop_registration`
+        WHERE is_payment_status = 1
+        AND is_active = 1
+        AND attend_days = 2
+        ORDER BY id ASC
+        LIMIT 60 OFFSET 60;
+
+
+
+        */
     }
 
 }

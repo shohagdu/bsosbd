@@ -70,6 +70,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/viewApplicant/{id}', [AdminController::class, 'viewApplicant'])->name('viewApplicant');
 
     Route::get('/submittedAbstract', [AdminController::class, 'submittedAbstract'])->name('submittedAbstract');
+    Route::get('/showKitDistributeDetails/{counter}', [AdminController::class, 'showKitDistributeDetails'])->name('showKitDistributeDetails');
+    Route::get('/kitDistributionSmsGenerate', [AdminController::class, 'kitDistributionSmsGenerate'])->name('kitDistributionSmsGenerate');
 
 });
 
