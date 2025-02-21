@@ -251,7 +251,7 @@ class AdminController extends Controller
             ]);
 
 
-        return $pdf->stream('Kit-Distribute-Counter-No' . $countID . '.pdf');
+        return $pdf->download('Kit-Distribute-Counter-No' . $countID . '.pdf');
     }
 
 

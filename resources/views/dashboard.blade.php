@@ -108,7 +108,7 @@
                                         <td>{{ $kit->end_id??NULL }}</td>
                                         <td>
                                             <a href="{{ url('showKitDistributeDetails/'.$kit->kit_collect_counter_no) }}" class="btn btn-primary btn-xs">View</a>
-                                            <a href="{{ url('showKitDistributeDetailsPDF/'.$kit->kit_collect_counter_no) }}" class="btn btn-info btn-xs">PDF</a>
+                                            <a href="{{ url('showKitDistributeDetailsPDF/'.$kit->kit_collect_counter_no) }}" class="btn btn-info btn-xs" target="_blank">PDF</a>
 
                                         </td>
                                     </tr>
