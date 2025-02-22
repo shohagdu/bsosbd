@@ -239,7 +239,7 @@ class AdminController extends Controller
 
         // Generate the PDF with the appropriate data
         $pdf = PDF::loadView('admin.showKitDistributeDetailsPDF', compact('allApplicant', 'doctorTitle', 'countID'))
-            ->setPaper('A4', 'landscape') // Set paper size and orientation
+            ->setPaper('A4', 'P') // Set paper size and orientation
             ->setOptions([
                 'isHtml5ParserEnabled' => true, // Enable HTML5 parser for styling
                 'isPhpEnabled' => true, // Enable PHP for page numbers
@@ -268,7 +268,8 @@ class AdminController extends Controller
                 $kit_collect_counter_no    =  (!empty($applicantData->kit_collect_counter_no)?$applicantData->kit_collect_counter_no:'');
                 $kit_collect_sl_no    =  (!empty($applicantData->kit_collect_sl_no)?$applicantData->kit_collect_sl_no:'');
 
-                $msg    =   "Dear, \n". $applicantName.", Thank you for participating in BREASTBDCON 2025.\nYour Kit Collection COUNTER NO # ". $kit_collect_counter_no.
+                $msg    =   "Dear, \n". $applicantName.", Thank you for participating in BREASTBDCON 2025.\nYour Registration Kit Collection
+                     \nCOUNTER NO # ". $kit_collect_counter_no.
                     ",\nSL NO # ".$kit_collect_sl_no.
                     ",\nID # ".$applicantID.
                     "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka ";

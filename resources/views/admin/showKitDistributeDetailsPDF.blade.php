@@ -8,7 +8,7 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <td colspan="8" style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;">
+                        <td colspan="7" style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;">
 
                             <div style="text-align: center;font-size: 18px;font-weight: bold;margin-bottom: 10px;">
                                 Counter No #  {{ $countID??NULL }}
@@ -19,17 +19,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 30px;">S/N</th>
+                        <th style="width: 40px;">SL No</th>
                         @if($countID=='ALL')
                             <th>Counter</th>
                         @endif
                         <th style="width: 80px;">ID</th>
-                        <th style="width: 120px;">Title</th>
+                        <th style="width: 110px;">Title</th>
                         <th >Name</th>
-                        <th style="width: 80px;">Mobile</th>
-                        <th style="width: 100px;" >Email</th>
-                        <th style="width: 200px;">Degree/Institute</th>
-                        <th>Package</th>
+                        <th style="width: 70px;">Mobile</th>
+                        <th style="width: 70px;">Package</th>
+                        <th style="width: 70px;">Days</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,9 +43,8 @@
                             <td>{{ $doctorTitle[$applicant->title]??NULL }}</td>
                             <td>{{ $applicant->name??NULL }}</td>
                             <td>{{ $applicant->mobile??NULL }}</td>
-                            <td>{{ $applicant->email??NULL }}</td>
-                            <td>{{ $applicant->degree??NULL }} <br/>{{ $applicant->institute??NULL }}</td>
                             <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
+                            <td>{{ !empty($applicant->attend_days)?($applicant->attend_days==1?"1st Day":'Both Days'):NULL }}</td>
                         </tr>
                     @endforeach
                 @endif
