@@ -251,8 +251,7 @@ class AdminController extends Controller
                 "enable_php"=> true
             ]);
 
-
-        return $pdf->download('Kit-Distribute-COUNTER-No-' . $countID . '.pdf');
+        return $pdf->download('COUNTER-No-' . $countID .'(Total-'.count($allApplicant). ').pdf');
     }
 
 

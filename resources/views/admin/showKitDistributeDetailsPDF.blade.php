@@ -8,14 +8,14 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <td colspan="7" style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;">
-
-                            <div style="text-align: left;font-size: 18px;font-weight: bold;margin-bottom: 10px;">
-                                Counter No #  {{ $countID??NULL }}
-                                @if($countID==7)
-                                    (1st Day)
-                                @endif
-                            </div>
+                        <td colspan="7" style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;text-align: left;font-size: 15px;font-weight: bold;margin-bottom: 10px;">
+                            Counter No #  {{ $countID??NULL }}
+                            @if($countID==7)
+                                (1st Day)
+                            @endif
+                        </td>
+                        <td  style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;font-size: 15px;text-align: right;font-weight: bold">
+                            Total: {{ count($allApplicant) }}
                         </td>
                     </tr>
                     <tr>
