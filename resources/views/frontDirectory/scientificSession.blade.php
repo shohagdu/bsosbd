@@ -147,15 +147,15 @@
                     <div><span style="color: #000000;"><span style="font-size: large;">QA</span></span></div>
                 </p>
 
-                <div style="font-size: 20px;color: #c00000;font-weight: bold;margin-top: 30px;"> <span style="border-bottom: 2px dotted red;">Session 8 (03:45-04:45)</span></div>
+                <div style="font-size: 20px;color: #c00000;font-weight: bold;margin-top: 30px;"> <span style="border-bottom: 2px dotted red;">Session 8 (03:45pm - 04:45pm)</span></div>
 
                 <p>
                     <div style="font-size: medium;">Bangladesh Chapter (Mixed session)</div>
                     <div style="font-size: large;font-weight: bold;">Chairpersons </div>
-                    <div>Prof Md. A. Mottalab Hossain</div>
-                    <div><span style="font-size: medium;">Prof Khondker Abul Kalam Azad</span></div>
-                    <div>Prof.AMSM Sharafuzzaman</div>
-                    <div>Prof.K.M.Ashraf Ali</div>
+                    <div>Prof. Md. A. Mottalab Hossain</div>
+                    <div><span style="font-size: medium;">Prof. Dr. Md. Margub Hossain </span></div>
+                    <div>Prof. AMSM Sharafuzzaman</div>
+                    <div>Prof. K.M.Ashraf Ali</div>
                     <div><span style="font-size: large;font-weight: bold;">Rapporteur: </span> Dr Jahangir Hussain</div>
                 </p>
 
