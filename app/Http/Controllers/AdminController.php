@@ -216,7 +216,19 @@ class AdminController extends Controller
     }
     public function showKitDistributeDetails($countID){
         $doctorTitle        =   Home::getDoctorTitle();
-        $allApplicant       =   DB::table('workshop_registration')->where(['is_active'=>1,'kit_collect_counter_no'=>$countID,'is_payment_status'=>1])->get();
+
+        if ($countID == 'ALL') {
+            // If "ALL", don't filter by kit_collect_counter_no
+            $allApplicant = DB::table('workshop_registration')
+                ->where(['is_active' => 1, 'is_payment_status' => 1])
+                ->get();
+        } else {
+            // If a specific $countID is provided, filter by kit_collect_counter_no
+            $allApplicant = DB::table('workshop_registration')
+                ->where(['is_active' => 1, 'kit_collect_counter_no' => $countID, 'is_payment_status' => 1])
+                ->get();
+        }
+
         return view('admin.showKitDistributeDetails',compact('allApplicant','doctorTitle','countID'));
     }
     public function showKitDistributeDetailsPDF($countID=NULL){

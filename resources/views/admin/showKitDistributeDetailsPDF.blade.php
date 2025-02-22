@@ -21,7 +21,7 @@
                     <tr>
                         <th style="width: 35px;">SL No</th>
                         @if($countID=='ALL')
-                            <th>Counter</th>
+                            <th style="width: 60px;">Counter</th>
                         @endif
                         <th style="width: 60px;">ID</th>
                         <th style="width: 110px;text-align: left">Title</th>
@@ -38,13 +38,13 @@
                         <tr>
                             <td style="text-align: center">{{ $applicant->kit_collect_sl_no??NULL }}</td>
                             @if($countID=='ALL')
-                                <td style="text-align: center">{{ $applicant->kit_collect_counter_no??NULL }}</td>
+                                <td style="text-align: center;width: 60px;">{{ $applicant->kit_collect_counter_no??NULL }}</td>
                             @endif
                             <td>{{ $applicant->member_id??NULL }}</td>
                             <td>{{ $doctorTitle[$applicant->title]??NULL }}</td>
                             <td>{{ $applicant->name??NULL }}</td>
                             <td>{{ $applicant->mobile??NULL }}</td>
-                            <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
+                            <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegate':'Trainee'):NULL }}</td>
                             <td>{{ !empty($applicant->attend_days)?($applicant->attend_days==1?"1st Day":'Both Days'):NULL }}</td>
                             <td></td>
                         </tr>
