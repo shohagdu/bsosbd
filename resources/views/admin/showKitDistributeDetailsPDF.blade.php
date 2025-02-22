@@ -10,7 +10,7 @@
                     <tr>
                         <td colspan="7" style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;">
 
-                            <div style="text-align: center;font-size: 18px;font-weight: bold;margin-bottom: 10px;">
+                            <div style="text-align: left;font-size: 18px;font-weight: bold;margin-bottom: 10px;">
                                 Counter No #  {{ $countID??NULL }}
                                 @if($countID==7)
                                     (1st Day)
@@ -19,16 +19,17 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="width: 40px;">SL No</th>
+                        <th style="width: 35px;">SL No</th>
                         @if($countID=='ALL')
                             <th>Counter</th>
                         @endif
-                        <th style="width: 80px;">ID</th>
+                        <th style="width: 60px;">ID</th>
                         <th style="width: 110px;">Title</th>
-                        <th >Name</th>
-                        <th style="width: 70px;">Mobile</th>
-                        <th style="width: 70px;">Package</th>
-                        <th style="width: 70px;">Days</th>
+                        <th style="width: 150px;" >Name</th>
+                        <th style="width: 50px;">Mobile</th>
+                        <th style="width: 50px;">Package</th>
+                        <th style="width: 60px;">Days</th>
+                        <th >Signature</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +46,7 @@
                             <td>{{ $applicant->mobile??NULL }}</td>
                             <td>{{ !empty($applicant->package_category)?($applicant->package_category==1?'Delegrate':'Trainee'):NULL }}</td>
                             <td>{{ !empty($applicant->attend_days)?($applicant->attend_days==1?"1st Day":'Both Days'):NULL }}</td>
+                            <td></td>
                         </tr>
                     @endforeach
                 @endif
@@ -64,12 +66,21 @@
     table, th, td {
         border: 1px solid #333;
     }
-    th, td {
+    th{
         padding-left: 3px;
-        padding-top: 2px;
-        text-align: left;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
         font-size: 12px;
     }
+   td {
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: left;
+        font-size: 11px;
+    }
+
     th {
         background-color: #f2f2f2;
         font-weight: bold;
@@ -81,4 +92,19 @@
         background-color: #f1f1f1;
     }
 </style>
+<script type="text/php">
+    if (isset($pdf)) {
+        $x = 270;  // Adjust the X position for center alignment
+        $y = 820;  // Move Y position to the bottom
+        $text = "Page {PAGE_NUM} of {PAGE_COUNT}";
+        $font = null;
+        $size = 10;
+        $color = array(0, 0, 0);  // Black color
+        $word_space = 0.0;
+        $char_space = 0.0;
+        $angle = 0.0;
 
+        $pdf->page_text($x, $y, $text, $font, $size, $color, $word_space, $char_space, $angle);
+    }
+
+</script>

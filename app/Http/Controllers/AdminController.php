@@ -248,10 +248,11 @@ class AdminController extends Controller
                 'margin_left' => 15, // Left margin (in mm)
                 'margin_right' => 15, // Right margin (in mm)
                 'margin_bottom' => 20, // Bottom margin (in mm)
+                "enable_php"=> true
             ]);
 
 
-        return $pdf->download('Kit-Distribute-Counter-No' . $countID . '.pdf');
+        return $pdf->download('Kit-Distribute-COUNTER-No-' . $countID . '.pdf');
     }
 
 
