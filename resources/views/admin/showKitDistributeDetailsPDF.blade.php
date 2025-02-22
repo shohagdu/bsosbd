@@ -24,8 +24,8 @@
                             <th>Counter</th>
                         @endif
                         <th style="width: 60px;">ID</th>
-                        <th style="width: 110px;">Title</th>
-                        <th style="width: 150px;" >Name</th>
+                        <th style="width: 110px;text-align: left">Title</th>
+                        <th style="width: 150px;text-align: left" >Name</th>
                         <th style="width: 50px;">Mobile</th>
                         <th style="width: 50px;">Package</th>
                         <th style="width: 60px;">Days</th>
