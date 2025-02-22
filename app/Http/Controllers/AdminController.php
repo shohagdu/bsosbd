@@ -251,7 +251,7 @@ class AdminController extends Controller
                 "enable_php"=> true
             ]);
 
-        return $pdf->download('COUNTER-No-' . $countID .'(Total-'.count($allApplicant). ').pdf');
+        return $pdf->download('COUNTER-No-'.$countID .'.pdf');
     }
 
 
