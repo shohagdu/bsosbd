@@ -14,7 +14,7 @@
                                 (1st Day)
                             @endif
                         </td>
-                        <td  style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;font-size: 15px;text-align: right;font-weight: bold">
+                        <td colspan="{{ $countID=='ALL'?2:1 }}"  style="border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 1px solid #fff;font-size: 15px;text-align: right;font-weight: bold">
                             Total: {{ count($allApplicant) }}
                         </td>
                     </tr>
