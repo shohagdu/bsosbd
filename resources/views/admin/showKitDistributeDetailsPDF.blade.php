@@ -94,17 +94,18 @@
 </style>
 <script type="text/php">
     if (isset($pdf)) {
-        $x = 270;  // Adjust the X position for center alignment
-        $y = 820;  // Move Y position to the bottom
+        $x = 520;  // Move to the right side (adjust if needed)
+        $y = 820;  // Position near the bottom
         $text = "Page {PAGE_NUM} of {PAGE_COUNT}";
-        $font = null;
-        $size = 10;
+{{--        $font = $pdf->getFontMetrics()->get_font("helvetica", "normal"); // Set font--}}
+        $size = 10;  // Adjust font size for readability
         $color = array(0, 0, 0);  // Black color
         $word_space = 0.0;
         $char_space = 0.0;
         $angle = 0.0;
 
-        $pdf->page_text($x, $y, $text, $font, $size, $color, $word_space, $char_space, $angle);
+        $pdf->page_text($x, $y, $text, '', $size, $color, $word_space, $char_space, $angle);
     }
+
 
 </script>
