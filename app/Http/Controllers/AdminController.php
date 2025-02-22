@@ -273,7 +273,6 @@ class AdminController extends Controller
 
         $dumpSmsHistory=[];
         foreach ($allApplicant as $applicantData) {
-
             if(!empty($applicantData)) {
                 $applicantName  =  (!empty($applicantData->name)?$applicantData->name:'');
                 $applicantID    =  (!empty($applicantData->member_id)?$applicantData->member_id:'');
@@ -285,14 +284,6 @@ class AdminController extends Controller
                     ",\nSL NO # ".$kit_collect_sl_no.
                     ",\nID # ".$applicantID.
                     "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka ";
-
-//Dear,
-//Md.Mizanur Rahman, Thank you for participating in BREASTBDCON 2025.
-//Your Kit Collection COUNTER NO # 2,
-//SL NO # 1,
-//ID # 2501071363
-//Venue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka
-
                 $smsEmail = [
                     'visitor_id'        => $applicantData->id??NULL,
                     'mobile_number'     => $applicantData->mobile??NULL,
@@ -309,9 +300,35 @@ class AdminController extends Controller
             }
        }
         dd($dumpSmsHistory);
-
-
     }
+    public function compGroupSmsGenerate(){
+        $allApplicant       =   DB::table('complementary_registration_group')->where(['is_active'=>1])->limit(1)->get();
+
+        $dumpSmsHistory=[];
+        foreach ($allApplicant as $applicantData) {
+            if(!empty($applicantData)) {
+                $applicantName  =  (!empty($applicantData->name)?$applicantData->name:'');
+                $kit_collect_counter_no    =  (!empty($applicantData->kit_collect_counter_no)?$applicantData->kit_collect_counter_no:'');
+                $msg    =   "Dear, \n". $applicantName.", Thank you for participating in BREASTBDCON 2025.\nYour Registration Kit Collection COUNTER NO # ". $kit_collect_counter_no.
+                    "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka ";
+                $smsEmail = [
+                    'visitor_id'        => $applicantData->id??NULL,
+                    'mobile_number'     => $applicantData->mobile??NULL,
+                    'email'             => NULL,
+                    'msg'               => $msg,
+                    'send_sms_status'   => 1,
+                    'send_email_status' => 1,
+                    'ins_date'          => date('Y-m-d H:i:s'),
+                    'ins_by'            => NULL,
+                ];
+                DB::table('sms_history')->insert($smsEmail);
+
+                $dumpSmsHistory[]=$smsEmail;
+            }
+       }
+        dd($dumpSmsHistory);
+    }
+
 
 
 

@@ -73,6 +73,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/showKitDistributeDetails/{counter}', [AdminController::class, 'showKitDistributeDetails'])->name('showKitDistributeDetails');
     Route::get('/showKitDistributeDetailsPDF/{counter}', [AdminController::class, 'showKitDistributeDetailsPDF'])->name('showKitDistributeDetailsPDF');
     Route::get('/kitDistributionSmsGenerate', [AdminController::class, 'kitDistributionSmsGenerate'])->name('kitDistributionSmsGenerate');
+    Route::get('/compGroupSmsGenerate', [AdminController::class, 'compGroupSmsGenerate'])->name('compGroupSmsGenerate');
 
 });
 
