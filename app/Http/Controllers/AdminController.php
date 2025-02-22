@@ -278,7 +278,7 @@ class AdminController extends Controller
                 $kit_collect_counter_no    =  (!empty($applicantData->kit_collect_counter_no)?$applicantData->kit_collect_counter_no:'');
                 $kit_collect_sl_no    =  (!empty($applicantData->kit_collect_sl_no)?$applicantData->kit_collect_sl_no:'');
 
-                $msg    =   "Dear, \n". $applicantName.", thank you for participating in BREASTBDCON 2025. Please collecet your registration Kit  at 1st Floor.\nCOUNTER NO # ". $kit_collect_counter_no .
+                $msg    =   "Dear, \n". $applicantName.", thank you for participating in BREASTBDCON 2025. Please collect your registration Kit  at 1st Floor.\nCOUNTER NO # ". $kit_collect_counter_no .
                     ",\nSL NO # ".$kit_collect_sl_no.
                     ",\nID # ".$applicantID.
                     "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka".
@@ -305,16 +305,20 @@ class AdminController extends Controller
 
     }
     public function compGroupSmsGenerate(){
-        $allApplicant       =   DB::table('complementary_registration_group')->where(['is_active'=>1])->limit(1)->get();
+        $allApplicant       =   DB::table('complementary_registration_group')
+            ->where(['is_active' => 1])
+            ->where('mobile', '!=', '')
+            ->get();
+
 
         $dumpSmsHistory=[];
         foreach ($allApplicant as $applicantData) {
-            if(!empty($applicantData)) {
+            if(!empty($applicantData->mobile)) {
                 $applicantName  =  (!empty($applicantData->name)?$applicantData->name:'');
                 $kit_collect_counter_no    =  (!empty($applicantData->kit_collect_counter_no)?$applicantData->kit_collect_counter_no:'');
-                $msg    =   "Dear, \n". $applicantName.", thank you for participating in BREASTBDCON 2025. Please collecet your registration Kit  at 1st Floor.\nCOUNTER NO # ". $kit_collect_counter_no .
-                    "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka. ".
-                    "\nDate: 23 Feb 2025".
+                $msg    =   "Dear, \n". $applicantName.", thank you for participating in BREASTBDCON 2025. Please collect your registration Kit  at 1st Floor.\nCOUNTER NO # ".  $kit_collect_counter_no .
+                    "\nVenue: Shaheed Abu Sayed International Convention Centre, Mintu Road, BSMMU, Dhaka.".
+                    "\nDate: 23 Feb 2025.".
                     "\nProgram Schedule: https://bsosbd.com/scientificSession";
                 $smsEmail = [
                     'visitor_id'        => $applicantData->id??NULL,
@@ -331,7 +335,10 @@ class AdminController extends Controller
                 $dumpSmsHistory[]=$smsEmail;
             }
        }
-        dd($dumpSmsHistory);
+        echo "<pre/>";
+        print_r($dumpSmsHistory);
+
+
     }
 
 

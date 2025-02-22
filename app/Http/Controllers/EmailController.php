@@ -23,7 +23,7 @@ class EmailController extends Controller
     public function sendSms(){
         $i=1;
         $sms_history    =[];
-        $sms            = Sms_history::where(['send_sms_status'=>1])->limit(10)->get();
+        $sms            = Sms_history::where(['send_sms_status'=>1])->limit(20)->get();
         if(count($sms)>0){
            foreach ($sms as $row){
                $sms_status= Sms_history::SendSms($row->mobile_number,$row->msg);
